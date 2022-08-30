@@ -1,13 +1,18 @@
-
+import React from 'react';
 import './App.css';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import Test from './components/Test';
 
 function App() {
   return (
     <div className="App">
       
-      <h1 className="mt-5">Development in progress</h1>
-      <img src="https://gifimage.net/wp-content/uploads/2018/04/progress-gif.gif" alt="in progress" className="mt-5"/>
-
+        <Router>
+          <Routes>
+            <Route path='/' element={<Test/>}></Route>
+          </Routes>
+        </Router>
+      
     </div>
   );
 }
