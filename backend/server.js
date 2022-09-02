@@ -13,6 +13,8 @@ app.use(express.json());
 const PORT = process.env.PORT;
 
 //For Route declareration
+const fueldetailRouter= require("./routes/FuelDetails");
+app.use("/fueldetail",fueldetailRouter);
 
 //End
 
