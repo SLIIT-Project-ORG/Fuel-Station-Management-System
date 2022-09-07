@@ -14,10 +14,14 @@ const PORT = process.env.PORT;
 
 //For Route declareration
 
+let employeeprofile = require("./routes/Employee__Profiles_Page.js");
+let ppayment = require("./routes/Payments");
+
 //End
 
 //Set route paths
-
+app.use("/admin/employeeprofile",employeeprofile);
+app.use("/admin/payment",ppayment);
 //End
 
 app.listen(PORT,()=>{
