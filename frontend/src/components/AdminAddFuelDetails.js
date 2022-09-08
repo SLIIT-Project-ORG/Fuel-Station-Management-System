@@ -33,35 +33,21 @@ export default function AddFuelDetails(){
     }
 
     return(
-      <div>
-         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="/admin_panel/home"style={{color:"red "}}>Fuel Details Management</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
-        <a className="nav-link" href="/admin_panel/accommodation_admin">All Fuel Details <span className="sr-only">(current)</span></a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="/admin_panel/accommodation_admin/addnew">Add new Fuel Details</a>
-      </li>
+      <div >
+<div class="p-5 mb-4 bg-dark rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 text-white fw-bold"> Admin: ADD Fuel Details</h1>
+        <p class="col-md-8 text-white fs-4">cypetco fuel station</p>
+        
+      </div>
+    </div>
+<br></br>
       
-
-     
-    </ul>
-
-  </div>
-</nav>
-<br/><br/><br/><br/><br/>
-      
-     <div className="container">
+     <div >
         <form className="row g-3 needs-validation" novalidate onSubmit={sendData}>
           
           <div className="col-md-4">
-            <label for="name" className="form-label">fueltype</label>
+            <label for="name" className="form-label">Fuel Type</label>
             <select id="inputState" class="form-control" required
              onChange={(e)=>{
                 setfueltype(e.target.value)
@@ -98,7 +84,7 @@ export default function AddFuelDetails(){
 
           </div>
           <div className="col-md-4">
-            <label for="type_ID" className="form-label">cypetco item no</label>
+            <label for="type_ID" className="form-label">Cypetco Item No</label>
             <select id="inputState" class="form-control" required
             onChange={(e)=>{
                 setcypetcoitemno(e.target.value)
@@ -121,7 +107,7 @@ export default function AddFuelDetails(){
 
           </div>
           <div className="col-md-4">
-            <label for="price" className="form-label">price</label>
+            <label for="price" className="form-label">Price</label>
             <input type="number" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
              onChange={(e)=>{
                 setprice(e.target.value)
@@ -134,7 +120,7 @@ export default function AddFuelDetails(){
 
           </div>
           <div className="col-md-4">
-            <label for="priceupdateddate" className="form-label">priceupdateddate</label>
+            <label for="priceupdateddate" className="form-label">Price Updated Date</label>
               <input type="date" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
               onChange={(e)=>{
                 setpriceupdateddate(e.target.value)
@@ -147,8 +133,8 @@ export default function AddFuelDetails(){
           
          
           <div className="col-md-3">
-            <label for="description" className="form-label">description</label>
-            <input type="text" className="form-control " id="validationServer05" aria-describedby="validationServer05Feedback" required
+            <label for="description" className="form-label">Description</label>
+            <input type="text" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
              onChange={(e)=>{
                 setdescription(e.target.value)
 

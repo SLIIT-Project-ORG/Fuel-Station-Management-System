@@ -28,9 +28,29 @@ function FuelDetailsManagement() {
     }
 
     return (
-        <div>
-            <h1 className='text-danger'>Fuel Details Management</h1>
-                <table className='table table-bordered table-striped'>
+        <div className='container-table100'>
+             <header class="bg-dark py-5">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-white">
+                        <h1 class="display-4 fw-bolder">Admin: Manage Fuel Details</h1>
+                        <p class="lead fw-normal text-white-50 mb-0">Fuel Details</p>
+                    </div>
+                </div>
+            </header>
+            <br></br>
+            <br></br>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="http://localhost:3000/adddetails" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> + Add New Fuel Details</a>
+            
+  
+</div>
+            <br></br>
+            <br></br>
+            <div class="row">
+                <div class="col-md-12">
+                <div class="table-wrap">
+                <table class="table">
+                <thead class="thead-dark">
                     <tr>
                         <th scope="col">Fuel Type</th>
                         <th scope="col">Fuel Quality</th>
@@ -40,7 +60,7 @@ function FuelDetailsManagement() {
                         <th scope="col">Description</th>
                         <th scope="col">Options</th>
                     </tr>
-
+                </thead>
                     <tbody>
                         {
                             fueldetails.map((val, key) => {
@@ -52,10 +72,38 @@ function FuelDetailsManagement() {
                                         <td style={{width:"100px"}}>{val.price}</td>
                                         <td style={{width:"100px"}}>{val.priceupdateddate}</td>
                                         <td style={{width:"100px"}}>{val.description}</td>
-                                        <td style={{width:"100px"}}><a href={`/update/`+val._id} className='btn-sm btn-primary'>Update</a>  <button className='btn-sm btn-danger' onClick={() => deleteMovie(val._id)}>Delete</button>
-                                        
+                                        <td style={{width:"100px"}}><a href={`/updatefueldetails/`+val._id} className='btn btn-warning'>Update</a> 
                                         <Popup
-                                                trigger={<button className="btn btn-outline-secondary"> View Detail </button>}
+                                                trigger={<button className="btn btn-danger"> Delete </button>}
+                                                modal
+                                                nested
+                                            >
+                                                {close => (
+                                                    <div className="container-fluid" style={{ padding: 5 }}>
+
+
+
+                                                        <div className="h-100 p-5 bg-light border rounded-3">
+                                                            <h1 className="card-title">Delete This Field ?</h1>
+                                                            <div className>
+                                                                <br></br>
+                                                                <button
+                                                                    className="btn btn-success"
+                                                                    onClick={() => {
+                                                                        console.log('modal closed ');
+                                                                        close();
+                                                                    }}
+                                                                >
+                                                                    Cancle
+                                                                </button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                                <button className='btn btn-danger' onClick={() => deleteMovie(val._id)}>Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </Popup>
+                                        <Popup
+                                                trigger={<button className="btn btn-info"> View Detail </button>}
                                                 modal
                                                 nested
                                             >
@@ -88,6 +136,7 @@ function FuelDetailsManagement() {
                                                     </div>
                                                 )}
                                             </Popup>
+                                            
                                         
                                         </td>
                                     </tr>
@@ -96,6 +145,9 @@ function FuelDetailsManagement() {
                         }
                     </tbody>
                 </table>
+                </div >
+                </div >
+                </div >
         </div >
     );
 }
