@@ -13,8 +13,14 @@ import EmployeeReportView from './components/EmployeeReportView';
 import AddPayment from './components/AddPayment';
 import PaymentDetails from './components/PaymentDetails';
 import UpdatePayment from './components/UpdatePaymentDetails';
-
-
+import FuelPassProfile from './components/FuelPassProfile';
+import FuelPassLogin from './components/FuelPassLogin';
+import FuelPassUserProfile from './components/FuelPassUserProfile';
+import AdminFuelPasses from './components/AdminFuelPasses';
+import AdminFuelPassUpdate from './components/AdminFuelPassUpdate';
+import AdminFuelPasses1 from './components/AdminFuelPasses1';
+import AdminFuelPassUpdate1 from './components/AdminFuelPassUpdate1';
+import FuelPassProfile1 from './components/FuelPassProfile1';
 
 
 function App() {
@@ -23,8 +29,8 @@ function App() {
 
       <Router>
         <Routes>
- 
-          
+
+
           <Route path='/login' element={<Login />}></Route>
           <Route path='/addemployee' element={<AddEmployee />}></Route>
           <Route path='/employeedetails' element={<EmployeeView />}></Route>
@@ -37,8 +43,23 @@ function App() {
           <Route path='/payment' element={<AddPayment />}></Route>
           <Route path='/paymentdetails' element={<PaymentDetails />}></Route>
           <Route path='/updatepayment' element={<UpdatePayment />}></Route>
-          
-         
+
+          {/* Gayashan */}
+          {/* <Route path='/admin/allfuelpass' element={<AdminFuelPasses/>}></Route>
+          <Route path='/admin/fuelpass/:id' element={<FuelPassProfile/>}></Route>
+          <Route path='/user/fuelpass/login' element={<FuelPassLogin/>}></Route>
+          <Route path='/user/fuelpass/:id' element={<FuelPassUserProfile/>}></Route>
+          <Route path='/admin/update/:id' element={<AdminFuelPasses/>}></Route>
+          <Route path='/admin/fuelPass/update/:id' element={<AdminFuelPassUpdate/>}></Route> */}
+
+          {/* Gayashan */}
+          <Route path='/admin/allfuelpass' element={<AdminFuelPasses1 />}></Route>
+          <Route path='/admin/fuelpass/:id' element={<FuelPassProfile1 />}></Route>
+          <Route path='/user/fuelpass/login' element={<FuelPassLogin />}></Route>
+          <Route path='/user/fuelpass/:id' element={<FuelPassUserProfile />}></Route>
+          <Route path='/admin/update/:id' element={<AdminFuelPasses />}></Route>
+          <Route path='/admin/fuelPass/update/:id' element={<AdminFuelPassUpdate1 />}></Route> 
+
         </Routes>
       </Router>
 
