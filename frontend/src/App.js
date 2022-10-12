@@ -7,13 +7,15 @@ import FuelDetailsManagement from './components/ManageFuelDetails';
 import FuelDetailsCustomer from './components/FuelDetailsCustomerView';
 import UpdateFuelDetails from './components/updateFuelDetails';
 import Header from './components/Header';
+import Admin from './components/AdminSideBar';
 function App() {
   return (
     <div className="App">
 
       <Router>
         <Routes>
-          <Route path='/' element={<Header />}></Route>
+          {/* <Route path='/' element={<Header />}></Route> */}
+          <Route path='/admin' element={<Admin />}></Route>
           <Route path='/adddetails' element={<AddFuelDetails />}></Route>
           <Route path='/fueldetailsmanage' element={<FuelDetailsManagement />}></Route>
           <Route path='/updatefueldetails/:id' element={<UpdateFuelDetails />}></Route>

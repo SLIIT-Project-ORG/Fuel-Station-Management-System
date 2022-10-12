@@ -1,6 +1,6 @@
 import React,{useState} from "react"
 import axios from "axios";
-
+import "../styles/Admin.css";
 
 export default function AddFuelDetails(){
 
@@ -33,7 +33,89 @@ export default function AddFuelDetails(){
     }
 
     return(
-      <div >
+
+
+
+
+
+
+      <div>
+      <div className=" display-table mt-5 ">
+        <div className="row display-table-row mt-5">
+          <div className="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+            <div className="logo">
+
+
+            </div>
+            <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
+            <div className="navi">
+              <ul>
+                <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
+                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
+                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
+                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
+                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
+                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Supplier Management</span></a></li>
+                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Vehicle Management</span></a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div className="col-md-10 col-sm-11 display-table-cell v-align">
+
+            <div className="row mb-4">
+              <header>
+                <div className="col-md-7">
+                  <nav className="navbar-default pull-left">
+                    <div className="navbar-header">
+                      <div className="header">
+
+                        {/*---- Include the above in your HEAD tag --------*/}
+
+                        {/* Navigation */}
+                        <div className="fixed-top">
+
+                          <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear w-100 p-4">
+                            <div className="container">
+                              <a className="navbar-brand" rel="nofollow" target="_blank" href="#" style={{ textTransform: 'uppercase' }}>Admin Panel
+                              </a>
+                              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon" />
+                              </button>
+                              <div className="collapse navbar-collapse" id="navbarResponsive">
+                                <ul className="navbar-nav ml-auto">
+                                  <li className="nav-item active" style={{ marginLeft: "900px" }}>
+                                    <a className="nav-link" href="/">Home</a>
+                                  </li>
+                                  <li className="nav-item">
+                                    <a className="nav-link" href="/login">Signin</a>
+                                  </li>
+                                  <li className="nav-item">
+                                    <a className="nav-link" href="/register">About Us</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </nav>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+
+                </div>
+                <div className="col-md-5">
+                  <div className="header-rightside">
+
+                  </div>
+                </div>
+              </header>
+         
+           
+            </div>
+
+
+{/* our code */}<div >
 <div class="p-5 mb-4 bg-dark rounded-3">
       <div class="container-fluid py-5">
         <h1 class="display-5 text-white fw-bold"> Admin: ADD Fuel Details</h1>
@@ -42,7 +124,12 @@ export default function AddFuelDetails(){
       </div>
     </div>
 <br></br>
-      
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="http://localhost:3000/fueldetailsmanage" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
+            
+  
+</div>
+<br></br>  
      <div >
         <form className="row g-3 needs-validation" novalidate onSubmit={sendData}>
           
@@ -153,5 +240,27 @@ export default function AddFuelDetails(){
         </form>
     </div> 
    </div>
+          
+
+
+          </div>
+        </div>
+       
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+      
     )
 }

@@ -15,7 +15,10 @@ const PORT = process.env.PORT;
 //For Route declareration
 const fueldetailRouter= require("./routes/FuelDetails");
 app.use("/fueldetail",fueldetailRouter);
-
+const fuelInventorydetailRouter= require("./routes/FuelInventory");
+app.use("/fuelinventory",fuelInventorydetailRouter);
+const fuelstoragedetailRouter= require("./routes/FuelInventory");
+app.use("/fuelstorage",fuelstoragedetailRouter);
 //End
 
 //Set route paths

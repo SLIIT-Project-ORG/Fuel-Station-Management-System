@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer'
 import Popup from 'reactjs-popup';
-
+import "../styles/Admin.css";
 
 function FuelDetailsCustomer() {
 
