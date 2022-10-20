@@ -30,6 +30,8 @@ import AdminFuelPassUpdate1 from './components/AdminFuelPassUpdate1';
 import FuelPassProfile1 from './components/FuelPassProfile1';
 import { FuelOrderHome } from './components/FuelOrders/FuelOrderHome';
 import { AdminFuelOrderView } from './components/FuelOrders/AdminFuelOrderView';
+import AddPayment from './components/AddPayment';
+import PaymentDetails from './components/PaymentDetails';
 
 function App() {
   return (
