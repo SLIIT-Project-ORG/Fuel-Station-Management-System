@@ -21,7 +21,8 @@ import AdminFuelPassUpdate from './components/AdminFuelPassUpdate';
 import AdminFuelPasses1 from './components/AdminFuelPasses1';
 import AdminFuelPassUpdate1 from './components/AdminFuelPassUpdate1';
 import FuelPassProfile1 from './components/FuelPassProfile1';
-
+import { FuelOrderHome } from './components/FuelOrders/FuelOrderHome';
+import { AdminFuelOrderView } from './components/FuelOrders/AdminFuelOrderView';
 
 function App() {
   return (
@@ -59,6 +60,9 @@ function App() {
           <Route path='/user/fuelpass/:id' element={<FuelPassUserProfile />}></Route>
           <Route path='/admin/update/:id' element={<AdminFuelPasses />}></Route>
           <Route path='/admin/fuelPass/update/:id' element={<AdminFuelPassUpdate1 />}></Route> 
+
+          <Route path='/user/fuelOrderHome' element={<FuelOrderHome/>}/>
+          <Route path='/admin/fuelOrderView' element={<AdminFuelOrderView/>}/>
 
         </Routes>
       </Router>
