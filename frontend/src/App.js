@@ -10,9 +10,16 @@ import UpdateEmployee from './components/UpdateEmployeeDetails';
 import Home from './components/HomePage';
 import Admin from './components/AdminSideBar';
 import EmployeeReportView from './components/EmployeeReportView';
-import AddPayment from './components/AddPayment';
-import PaymentDetails from './components/PaymentDetails';
+
 import UpdatePayment from './components/UpdatePaymentDetails';
+
+import Test from './components/Test';
+import Test1 from './components/Test1';
+
+import Test4 from './components/Test4';
+import Test5 from './components/Test5';
+import Test6 from './components/Test6';
+
 import FuelPassProfile from './components/FuelPassProfile';
 import FuelPassLogin from './components/FuelPassLogin';
 import FuelPassUserProfile from './components/FuelPassUserProfile';
@@ -33,7 +40,7 @@ function App() {
 
 
           <Route path='/login' element={<Login />}></Route>
-          <Route path='/addemployee' element={<AddEmployee />}></Route>
+         
           <Route path='/employeedetails' element={<EmployeeView />}></Route>
           <Route path='/userprofile' element={<UserLogin />}></Route>
           <Route path='/employeeprofile/:id' element={<UserProfileView />}></Route>
@@ -41,6 +48,14 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/admin' element={<Admin />}></Route>
           <Route path='/employeedetails' element={<EmployeeReportView />}></Route>
+          
+          
+          <Route path='/updatepayment/:id' element={<UpdatePayment />}></Route>
+          <Route path='/test' element={<Test/>}></Route>
+          <Route path='/test1' element={<Test1/>}></Route>
+          <Route path='/payment' element={<Test4/>}></Route>
+          <Route path='/paymentdetails' element={<Test5/>}></Route>
+          <Route path='/payment/:id' element={<Test6/>}></Route>
           <Route path='/payment' element={<AddPayment />}></Route>
           <Route path='/paymentdetails' element={<PaymentDetails />}></Route>
           <Route path='/updatepayment' element={<UpdatePayment />}></Route>

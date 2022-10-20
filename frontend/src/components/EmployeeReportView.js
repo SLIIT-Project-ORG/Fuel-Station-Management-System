@@ -17,12 +17,12 @@ export default  function EmployeeReportView() {
         return (
 
             <div>
-                <div className="container mb-4 mt-4 p-3" style={{marginLeft:"850px"}}>
+                <div className="container p-3" style={{marginLeft:"1000px",marginTop:"-40px"}}>
                     <div className="row">
                         {
                             <div className="row">
                                 {(
-                                    <button className="btn btn-primary col-lg-2 "  onClick={() => ReportGenerator(employee)}>
+                                    <button className="btn btn-primary col-lg-2 p-2" style={{width:'300px'}}  onClick={() => ReportGenerator(employee)}>
                                         Download PDF
                                     </button>
                                 )}

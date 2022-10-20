@@ -18,18 +18,40 @@ router.route("/insert").post((req, res) => {
     const employeeprofileobj = new employeeprofile({
 
         First_Name, Last_Name, Address1, Address2, NIC, Phone_Number, Designation, Salary, Email
-
+    
     });
 
-    employeeprofileobj.save().then(() => {
+    employeeprofile.findOne({ Email: employeeprofileobj.Email, NIC: employeeprofileobj.NIC, Phone_Number: employeeprofileobj.Phone_Number })
+        .then((data) => {
+            if (!data) {
 
-        res.json("Insert Employee Details Successfully");
+                employeeprofileobj.save().then(() => {
 
-    }).catch((err) => {
+                    const obj = {
+                        msg: "Insert Employee Details Successfully",
+                    }
+                    res.json(obj);
 
-        console.log(err);
+                }).catch((err) => {
 
-    });
+                    const obj = {
+                        msg: "Employee insert failed",
+                    }
+                    res.json(obj);
+
+                });
+
+            }
+            else {
+                const obj = {
+                    msg: "Mobile No,NIC or email already exists"
+                }
+                res.json(obj);
+            }
+        })
+        .catch((err) => {
+            console.log(err.message);
+        })
 
 });
 
@@ -113,12 +135,12 @@ router.route("/search").post((req, res) => {
             Phone_Number: employee.Phone_Number
         }
     )
-    .then((data)=>{
-        res.json(data);
-    })
-    .catch((err)=>{
-        res.json(err.message);
-    })
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => {
+            res.json(err.message);
+        })
 
 })
 

@@ -18,8 +18,10 @@ export default function UpdateEmployee() {
                 title: "Update",
                 text: " Employee Details  Update Successfully",
                 icon: "Success",
-                button: "OK"
+                button: "OK",
+                
             });
+           
         }).catch((err) => {
             alert(err)
         })
@@ -56,8 +58,8 @@ return (
            
               <form onSubmit={sendData}class="form-card" onsubmit="event.preventDefault()">
                   <div class="row justify-content-between text-left">
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label> <input type="text"value={data.First_Name} id="First_Name" name="First_Name" onblur="validate(1)" onChange={handleChange}/> </div>
-                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> <input type="text" value={data.Last_Name}id="Last_Name" name="Last_Name" onblur="validate(2)"  onChange={handleChange}/> </div>
+                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First Name<span class="text-danger"> *</span></label> <input type="text"value={data.First_Name} id="First_Name" name="First_Name" onblur="validate(1)" onChange={handleChange}/> </div>
+                      <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last Name<span class="text-danger"> *</span></label> <input type="text" value={data.Last_Name}id="Last_Name" name="Last_Name" onblur="validate(2)"  onChange={handleChange}/> </div>
                   </div>
                   <div class="row justify-content-between text-left">
                       <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label> <input type="text" value={data.Address1} id="Address1" name="Address1" onblur="validate(3)"  onChange={handleChange}/> </div>
