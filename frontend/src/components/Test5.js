@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import "../styles/Admin.css";
-import AddEmployee from './AddEmployee';
+
+
+import PaymentDetails from './PaymentDetails';
 
 
 
 
-export default function Test() {
+export default function Test5() {
     return (
         <div>
             <div className=" display-table mt-5 ">
@@ -81,16 +83,13 @@ export default function Test() {
 
 
                         </div>
-                        <AddEmployee/>
+                        <PaymentDetails/>
                     </div>
                 </div>
 
             </div>
 
-
-
-
-        </div>
+       </div>
 
     )
 }

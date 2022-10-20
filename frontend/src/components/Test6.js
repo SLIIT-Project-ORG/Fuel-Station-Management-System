@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import "../styles/Admin.css";
-import AddEmployee from './AddEmployee';
+import PaymentDetailsid from './paymentviewid';
 
 
 
 
-export default function Test() {
+
+
+
+export default function Test6() {
     return (
         <div>
             <div className=" display-table mt-5 ">
@@ -81,16 +84,13 @@ export default function Test() {
 
 
                         </div>
-                        <AddEmployee/>
+                        <PaymentDetailsid/>
                     </div>
                 </div>
 
             </div>
 
-
-
-
-        </div>
+       </div>
 
     )
 }

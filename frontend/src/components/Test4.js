@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import "../styles/Admin.css";
-import AddEmployee from './AddEmployee';
+
+import AddPayment from './AddPayment';
 
 
 
 
-export default function Test() {
+export default function Test4() {
     return (
         <div>
             <div className=" display-table mt-5 ">
@@ -81,7 +82,7 @@ export default function Test() {
 
 
                         </div>
-                        <AddEmployee/>
+                        <AddPayment/>
                     </div>
                 </div>
 

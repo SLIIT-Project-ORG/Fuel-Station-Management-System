@@ -9,14 +9,15 @@ export default function EmployeeView() {
     //view
     const [AdminEmployeeData, setAdminEmployeeData] = useState([]);
 
+
     //Search
     const [searchTerm, setsearchTerm] = useState("");
 
     useEffect(() => {
         axios.get("http://localhost:8000/admin/employeeprofile/").then((res) => {
-            
+
             setAdminEmployeeData(res.data);
-           
+
         }).catch((err) => {
             console.log(err);
         })
@@ -28,6 +29,7 @@ export default function EmployeeView() {
     function deleteemployee(id) {
         axios.delete(`http://localhost:8000/admin/employeeprofile/delete/${id}`).then(() => {
             alert(" Employee Details Successfully deleted");
+            window.location.href = "/employeedetails";
         }).catch((err) => {
             alert(err);
         })
@@ -35,16 +37,16 @@ export default function EmployeeView() {
 
     return (
         <div>
-         
-            <div class="container ">
-                <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">
+
+            <div class="container">
+                <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body">
                     <div class="row ">
-                  
+
 
                         <div class="col-sm-3 mt-5 mb-4 text-dark" >
                             <div className="search">
                                 <form class="form-inline">
-                                    <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search" name="searchTerm" 
+                                    <input class="form-control mr-sm-2 border border-dark" type="search" placeholder="Search" aria-label="Search" name="searchTerm"
 
                                         onChange={(e) => {
 
@@ -52,22 +54,22 @@ export default function EmployeeView() {
 
                                         }}
                                     />
-                                    
+
 
                                 </form>
-                                
+
                             </div>
                         </div>
                         <div class="col-sm-3 offset-sm-2  mb-4 text-gred text-danger" ><h2><b>Employee Details</b></h2></div>
-                    
+
                         <div class="col-sm-3 offset-sm-1  mt-5 mb-4 text-gred">
-                       
+
 
                         </div>
                     </div>
                     <div class="row">
-                        <div class="table-responsive " >
-                            
+                        <div class="table-responsive" >
+
                             <table class="table table-striped table-hover table-bordered" style={{ 'overflow': 'scroll', 'width': '1300px' }}>
                                 <thead>
                                     <tr>
@@ -108,7 +110,7 @@ export default function EmployeeView() {
                                             }
 
                                         })
-                                        .map((val, key) => {
+                                            .map((val, key) => {
                                                 return (
                                                     <tr className="bg-light  text-dark">
                                                         <td>{val.First_Name}</td>
@@ -130,14 +132,20 @@ export default function EmployeeView() {
 
                                 </tbody>
                             </table>
-                           
+
                         </div>
                     </div>
 
 
                 </div>
+
+
+              
+
             </div>
-            <EmployeeReportView/>
+
+            <EmployeeReportView />
+
         </div>
 
     )
