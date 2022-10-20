@@ -48,8 +48,8 @@ export default function AddPayment() {
                                                 }
                                             } >
                                                 <option selected>Select</option>
-                                                <option value="credit">Credit</option>
-                                                <option value="India">Debit</option></select></div>
+                                                <option value="Credit">Credit</option>
+                                                <option value="Debit">Debit</option></select></div>
                                     </div>
 
                                     <div class="form-group col-sm-6  mt-3 flex-column d-flex"> <label class="form-control-label px-3">Payment Method<span class="text-danger"> *</span></label>
@@ -59,8 +59,8 @@ export default function AddPayment() {
                                             }
                                         } >
                                             <option selected>Select</option>
-                                            <option value="credit">Bank Transfer</option>
-                                            <option value="India">Normal</option></select></div>
+                                            <option value="Bank Transfer">Bank Transfer</option>
+                                            <option value="Normal">Normal</option></select></div>
 
                                     <div class="row justify-content-between mt-3 text-left">
                                         <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Price<span class="text-danger"> *</span></label> <input type="text" id="Price" name="Price" placeholder="RS." onblur="validate(3)" required onChange={
@@ -102,8 +102,11 @@ export default function AddPayment() {
                                             <div class="form-group col-sm-6"> <button type="submit" class="btn btn-danger btn-block mt-5 mb-3 p-2 form-control" onClick={() => window.location.href = "/admin"}> Cancel </button> </div>
                                             <div class="form-group col-sm-6"> <button type="submit" class="btn btn-primary btn-block ml-5 mt-5 mb-3 p-2 form-control">Add New Payment</button> </div>
 
+                                           
 
                                         </div>
+                                        <div class="form-group col-sm-6"> <button type="submit" class="btn btn-success btn-block ml-5  mb-3 p-2 form-control"   onClick={() => window.location.href = "/paymentdetails"}>View Details</button> </div>
+
                                     </div>
                                 </form>
                             </div>

@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 export default function PaymentDetails() {
 
+   
     //view
     const [AdminPaymentData, setAdminPaymentData] = useState([]);
 
     //Search
     const [searchTerm, setsearchTerm] = useState("");
 
+    
+    
     useEffect(() => {
         axios.get("http://localhost:8000/admin/payment/").then((res) => {
-
             setAdminPaymentData(res.data);
-
+            console.log(res.data);
         }).catch((err) => {
             console.log(err);
         })
     }, [])
+
 
     //delete
 
@@ -107,7 +111,7 @@ export default function PaymentDetails() {
                                                             <td>{val.Date}</td>
 
 
-                                                            <td><button style={{ 'border': 'none' }}><a href={`/viewpayment/` + val._id}><img src="https://img.icons8.com/external-febrian-hidayat-glyph-febrian-hidayat/30/000000/external-edit-user-interface-febrian-hidayat-glyph-febrian-hidayat.png" /></a></button>
+                                                            <td><button style={{ 'border': 'none' }}><a href={`/payment/${val._id}`}><img src="https://img.icons8.com/ios/40/000000/visible--v1.png" /></a></button>
                                                                 <button style={{ 'border': 'none' }} onClick={() => deletepayment(val._id)}><img src="https://img.icons8.com/metro/25/ff0000/trash.png" /></button>
                                                             </td>
                                                         </tr>
@@ -117,6 +121,8 @@ export default function PaymentDetails() {
 
                                     </tbody>
                                 </table>
+
+
 
                             </div>
                         </div>

@@ -29,7 +29,8 @@ router.route("/insert").post((req, res) => {
 
     });
 
-});
+})
+
 
 //view
 router.route("/").get((req, res) => {
@@ -94,6 +95,28 @@ router.route("/:id").get((req, res) => {
         console.log(err);
     })
 
+});
+
+
+
+router.route("/search").post((req, res) => {
+
+    let  payment = req.body;
+
+    ppayment.findOne(
+        {
+            Name_Of_Payment: payment.Name_Of_Payment,
+            Date: payment.Date
+        }
+    )
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => {
+            res.json(err.message);
+        })
+
 })
+
 
 module.exports = router;

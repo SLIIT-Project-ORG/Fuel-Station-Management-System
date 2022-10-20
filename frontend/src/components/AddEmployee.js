@@ -1,6 +1,7 @@
 import React,{useState} from "react";
-import axios from  'axios';
+import axios from 'axios';
 import Admin from "./AdminSideBar";
+
 
 export default function AddEmployee() {
 
@@ -23,33 +24,40 @@ export default function AddEmployee() {
             First_Name, Last_Name,Address1,Address2, NIC, Phone_Number, Designation, Salary,Email
         }
 
-        axios.post("http://localhost:8000/admin/employeeprofile/insert", newemployee).then(() => {
-            alert("Employee Details Successfully added.");
+        axios.post("http://localhost:8000/admin/employeeprofile/insert", newemployee).then((res) => {
+        
+            alert(res.data.msg);
+            
 
         }).catch((err) => {
-            alert(err)
+            console.log(err);
         })
     }
 
     return (
      
         <div>
-            <div class="container-fluid px-1 py-5 mx-auto">
+            
+            
+            <div class="container-fluid px-1 py-5  mt-1 mx-auto">
+            
            
-                <div class="row d-flex justify-content-center">
+                <div class="row d-flex mt-2 justify-content-center">
+              
                     <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                   
                         <h1 className="text-danger">Add Employee Profile</h1>
 
                         <div class="card p-5">
-
+                  
                             <form class="form-card" onSubmit={sendData}>
                                 <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First name<span class="text-danger"> *</span></label> <input type="text" id="First_Name" name="First_Name" placeholder="Enter your first name" onblur="validate(1)" required onChange={
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">First Name<span class="text-danger"> *</span></label> <input type="text" id="First_Name" name="First_Name" placeholder="Enter your first name" onblur="validate(1)" required onChange={
                             (e) => {
                                 setFirstName(e.target.value);
                             }
                         } /> </div>
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> <input type="text" id="Last_Name" name="Last_Name" placeholder="Enter your last name" onblur="validate(2)" required onChange={
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Last Name<span class="text-danger"> *</span></label> <input type="text" id="Last_Name" name="Last_Name" placeholder="Enter your last name" onblur="validate(2)" required onChange={
                             (e) => {
                                 setLastName(e.target.value);
                             }
@@ -108,17 +116,19 @@ export default function AddEmployee() {
 
                                     <div class="form-group col-sm-6"> <button type="submit" class="btn btn-danger btn-block mt-5 mb-3 p-2 form-control"onClick={()=>window.location.href = "/admin"}> Cancel </button> </div>
                                     <div class="form-group col-sm-6"> <button type="submit" class="btn btn-primary btn-block ml-5 mt-5 mb-3 p-2 form-control">Add New Employee</button> </div>
-
+                                    <center> <div class="form-group col-sm-6"> <button type="submit" class="btn btn-success btn-block mt-3 mb-3 p-2 form-control"onClick={()=>window.location.href = "/test1"}> View Details </button> </div> </center>
 
                                 </div>
                             </form>
+                          
                         </div>
+                    
                     </div>
+                    
                 </div>
                 
             </div>
-           
-
+        
 
         </div>
     )

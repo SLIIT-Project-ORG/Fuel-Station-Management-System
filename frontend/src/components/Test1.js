@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import "../styles/Admin.css";
 import AddEmployee from './AddEmployee';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import EmployeeView from './EmployeeView';
 
 
 
-
-export default function Test() {
+export default function Test1() {
     return (
         <div>
             <div className=" display-table mt-5 ">
@@ -18,7 +19,7 @@ export default function Test() {
                         <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
                         <div className="navi">
                             <ul>
-                                <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                                <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
                                 <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
                                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
                                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
@@ -81,7 +82,12 @@ export default function Test() {
 
 
                         </div>
-                        <AddEmployee/>
+
+
+
+                        <EmployeeView/>
+
+
                     </div>
                 </div>
 
