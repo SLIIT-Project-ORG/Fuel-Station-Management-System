@@ -2,13 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Software Project Management (Project)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "backend": "nodemon backend",
+    "frontend": "cd.. && cd frontend && npm start",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "author": "Group 75",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^7.4.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
