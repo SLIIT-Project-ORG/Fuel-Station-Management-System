@@ -17,7 +17,7 @@ const fueldetailRouter= require("./routes/FuelDetails");
 app.use("/fueldetail",fueldetailRouter);
 const fuelInventorydetailRouter= require("./routes/FuelInventory");
 app.use("/fuelinventory",fuelInventorydetailRouter);
-const fuelstoragedetailRouter= require("./routes/FuelInventory");
+const fuelstoragedetailRouter= require("./routes/FuelStorage");
 app.use("/fuelstorage",fuelstoragedetailRouter);
 //End
 
