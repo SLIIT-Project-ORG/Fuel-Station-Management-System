@@ -4,16 +4,20 @@ const jwt = require("jsonwebtoken");
 
 const adminSchema = new Schema({
     first_name:{
-        type:String
+        type:String,
+        required:true
     },
     last_name:{
-        type:String
+        type:String,
+        required:true
     },
     email:{
-        type:String
+        type:String,
+        required:true
     },
     contact_no:{
-        type:String
+        type:String,
+        required:true
     },
     username:{
         type:String,

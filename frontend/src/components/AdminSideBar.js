@@ -17,7 +17,7 @@ export default function Admin() {
 
             </div>
             <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
-            <div className="navi">
+            <div className="navi" style={{height:'100vh'}}>
               <ul>
                 <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
