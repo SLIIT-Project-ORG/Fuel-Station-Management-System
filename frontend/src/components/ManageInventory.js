@@ -3,6 +3,9 @@ import axios from 'axios';
 import Popup from 'reactjs-popup';
 import Admin from './AdminSideBar';
 import "../styles/Admin.css";
+import InventoryReportView from "./InventoryView";
+
+
 function FuelInventoryManagement() {
 
     const [fueldetails, setfueldetails] = useState([]);
@@ -127,6 +130,7 @@ function FuelInventoryManagement() {
 
 
                             </div>
+                            
                             
                             <br></br>
                             <br></br>
@@ -258,10 +262,14 @@ function FuelInventoryManagement() {
                                                 }
                                             </tbody>
                                         </table>
+                                        <br></br>
+                                        <div><InventoryReportView/></div>
+                                        </div>
                                     </div >
                                 </div >
                             </div >
                         </div >
+                        <div>
 
                         {/* our code */}
 

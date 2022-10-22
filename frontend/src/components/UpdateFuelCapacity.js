@@ -268,7 +268,7 @@ class EditFuelCapacity extends Component {
                             </div>
                             <div className="form-group row">
                               <div class="form-group col-md-6">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Available capacity: </label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Available capacity  liters: </label>
                                 <input
                                   type="Number"
                                   className="form-control"
@@ -295,7 +295,7 @@ class EditFuelCapacity extends Component {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <img src={`https://www.nicepng.com/png/detail/825-8259326_gauge-transparent-images-png-fuel-gauge-clip-art.png`} class="img-fluid" alt="..." />
+                      <img src={`https://img.freepik.com/premium-vector/fuel-indicator-gas-petrol-gasoline-diesel-level-count-fuel-gauge-scales-icon-car-gauge-measuring-fuel-consumption-control-gas-tank-fullness-performance-measurement-vector_342166-331.jpg?w=740`} class="img-fluid" alt="..." />
                     </div>
                   </div>
                 </div>
