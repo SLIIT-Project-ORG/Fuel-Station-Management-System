@@ -28,14 +28,33 @@ import AdminFuelPassUpdate from './components/AdminFuelPassUpdate';
 import AdminFuelPasses1 from './components/AdminFuelPasses1';
 import AdminFuelPassUpdate1 from './components/AdminFuelPassUpdate1';
 import FuelPassProfile1 from './components/FuelPassProfile1';
-import PaymentDetails from './components/PaymentDetails';
-import AddPayment from './components/AddPayment';
+//import PaymentDetails from './components/PaymentDetails';
+//import AddPayment from './components/AddPayment';
 
 import { FuelOrderHome } from './components/FuelOrders/FuelOrderHome';
 import { AdminFuelOrderView } from './components/FuelOrders/AdminFuelOrderView';
 import AddPayment from './components/AddPayment';
 import PaymentDetails from './components/PaymentDetails';
 
+
+
+
+
+
+import AddFuelDetails from './components/AdminAddFuelDetails';
+import FuelDetailsManagement from './components/ManageFuelDetails';
+import FuelDetailsCustomer from './components/FuelDetailsCustomerView';
+import UpdateFuelDetails from './components/updateFuelDetails';
+import AddFuelInventory from './components/AdminAddInventoty';
+import FuelInventoryManagement from './components/ManageInventory';
+import AddFuelStorage from './components/AdminAddFuelStorage';
+import Header from './components/Header';
+//import Admin from './components/AdminSideBar';
+import UpdateInventory from './components/updateInventory';
+import FuelStorageCustomer from './components/StorageDetailsCustomerView';
+import UpdateFuelCapacity from './components/UpdateFuelCapacity';
+import UpdateFuelStorage from './components/updateFuelStorage';
+import FuelStorageManagement from './components/ManageStorage';
 function App() {
   return (
     <div className="App">
@@ -82,6 +101,29 @@ function App() {
 
           <Route path='/user/fuelOrderHome' element={<FuelOrderHome/>}/>
           <Route path='/admin/fuelOrderView' element={<AdminFuelOrderView/>}/>
+
+
+
+
+          <Route path='/admin' element={<Admin />}></Route>
+          <Route path='/adddetails' element={<AddFuelDetails />}></Route>
+          <Route path='/fueldetailsmanage' element={<FuelDetailsManagement />}></Route>
+          <Route path='/updatefueldetails/:id' element={<UpdateFuelDetails />}></Route>
+          <Route path='/fueldetailsCustomer' element={<FuelDetailsCustomer />}></Route>
+          <Route path='/addinventory' element={<AddFuelInventory />}></Route>
+          <Route path='/manageinventory' element={<FuelInventoryManagement />}></Route>
+          <Route path='/updatefuelinventory/:id' element={<UpdateInventory/>}></Route>
+          <Route path='/addstorage' element={<AddFuelStorage />}></Route>
+          <Route path='/updatefuelstorage/:id' element={<UpdateFuelStorage/>}></Route>
+          <Route path='/updatefuelcapacity/:id' element={<UpdateFuelCapacity/>}></Route>
+          <Route path='/storagecustomer' element={<FuelStorageCustomer/>}></Route>
+          <Route path='/storagemanagement' element={<FuelStorageManagement/>}></Route>
+
+
+
+
+
+
 
         </Routes>
       </Router>

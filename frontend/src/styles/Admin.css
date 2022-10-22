@@ -242,7 +242,7 @@ li,ul{
 }
 
 .header-top i {
-    color: #f60909;
+    color: #d52727;
 }
 
 .icon-info {
@@ -335,8 +335,8 @@ header {
 }
 
 .navi a {
-    border-bottom: 1px solid #136e45;
-    border-top: 1px solid #136e40;
+    border-bottom: 1px solid #d52727;
+    border-top: 1px solid #d52727;
     color: #ffffff;
     display: block;
     font-size: 17px;
@@ -357,8 +357,8 @@ header {
 }
 
 .navi a:hover {
-    background:#b81d1d none repeat scroll 0 0;
-    border-left: 5px solid #f11b29;
+    background:#d52727 none repeat scroll 0 0;
+    border-left: 5px solid #d52727;
     display: block;
     padding-left: 5px;
 }
