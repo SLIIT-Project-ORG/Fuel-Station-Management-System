@@ -5,7 +5,7 @@ import VisibilitySharpIcon from '@mui/icons-material/VisibilitySharp';
 import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
 import DoneAllSharpIcon from '@mui/icons-material/DoneAllSharp';
 import RemoveDoneSharpIcon from '@mui/icons-material/RemoveDoneSharp';
-import { minWidth, padding } from "@mui/system";
+import OrderReportView from "./OrderReportView";
 
 export const AdminFuelOrderView = () => {
 
@@ -25,7 +25,7 @@ export const AdminFuelOrderView = () => {
     const deleteOrder = (id) =>{
         axios.delete(`http://localhost:8000/fuel-order/${id}`)
         .then((res)=>{
-            alert(res.data);
+            alert("Deleted Successfully");
             window.location.href = "/admin/fuelOrderView/";
         })
         .catch((res)=>{
@@ -37,10 +37,10 @@ export const AdminFuelOrderView = () => {
         axios.put(`http://localhost:8000/fuel-order/${id}/${status}`)
         .then((res)=>{
             if(res.isApprove = true){
-                alert("Approved");
+                alert("Status Updated");
             }
             else{
-                alert("Rejected");
+                alert("Status Updated");
             }
             window.location.href = "/admin/fuelOrderView/";
         })
@@ -59,11 +59,11 @@ export const AdminFuelOrderView = () => {
                     </AppBar>
                 </Stack>
 
-
                 <div>
                     <Box alignItems={'center'} margin={'100px'} marginTop={'120px'} marginBottom={'0px'}>
                         <Paper variant={'outlined'} sx={{ padding: '50px' }}>
                             <h2>FUEL ORDERS</h2>
+                            <OrderReportView/>
                             <TableContainer sx={{maxHeight:"300px"}}>
                                 <Table sx={{ minWidth: '1200px'}} aria-label="simple table">
                                     <TableHead>
