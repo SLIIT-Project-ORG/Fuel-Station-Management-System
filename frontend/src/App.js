@@ -28,6 +28,8 @@ import AdminFuelPassUpdate from './components/AdminFuelPassUpdate';
 import AdminFuelPasses1 from './components/AdminFuelPasses1';
 import AdminFuelPassUpdate1 from './components/AdminFuelPassUpdate1';
 import FuelPassProfile1 from './components/FuelPassProfile1';
+import PaymentDetails from './components/PaymentDetails';
+import AddPayment from './components/AddPayment';
 
 
 function App() {
@@ -36,7 +38,6 @@ function App() {
 
       <Router>
         <Routes>
-
 
           <Route path='/login' element={<Login />}></Route>
          

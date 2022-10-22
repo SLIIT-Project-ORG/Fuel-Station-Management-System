@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Paper, Stack, TextField, Button, FormLabel } from '@mui/material';
+import loginImage from '../images/LoginWallpaper.jpg';
 
 export default function Login() {
 
@@ -15,7 +17,8 @@ export default function Login() {
 
     axios.post("http://localhost:8000/admin/login/", newadmin).then((res) => {
       alert("Successfully Login.");
-      console.log(res.data);
+      console.log(res.data.data);
+      // localStorage.setItem(res.data.data, "token")
       window.location.href = "/admin";
     }).catch((err) => {
       alert(err)
@@ -23,58 +26,41 @@ export default function Login() {
   }
 
 
-
   return (
     <div>
-      <div className="row mt-5"></div>
-      <div className="row">
-        <h1 className="text-danger mt-5 b">Admin Login</h1>
-        <div className="col-3"></div>
-        <div class="col-lg-3 d-none d-lg-flex mt-5">
-          <img src="https://th.bing.com/th/id/R.20bbaa9b4cea89e95432c5b758b27643?rik=M5NYN0z8vkGoIg&riu=http%3a%2f%2fwww.dataversity.net%2fwp-content%2fuploads%2f2011%2f08%2fOrange-Login-Button.jpg&ehk=5%2fKuZcYR9GuQFn5JLY5JAjuUSal2L6u7wgRTu4dPX%2bM%3d&risl=&pid=ImgRaw&r=0" alt="Trendy Pants and Shoes"
-            class="w-100 " />
-        </div>
+      <Stack spacing={2} direction={'row'} sx={{ marginTop: '180px' }}>
+        <Stack spacing={2} direction={'column'} flex={2}></Stack>
+        <Stack spacing={2} direction={'column'} >
+          <Stack spacing={2} direction={'row'}>
+            <h2 style={{ fontFamily: 'revert', fontWeight: 'bold', color: 'red' }}>ADMIN LOGIN</h2>
+          </Stack>
+          <Paper sx={{ padding: '30px' }} variant='outlined'>
+            <Stack direction={'row'} spacing={2}>
+              <img src={loginImage} width="300px" />
+              <form onSubmit={sendData}>
+                <Stack spacing={2} direction={'column'} marginTop={'40px'}>
+                  <TextField type='text' id="username" name="username" size="medium" label="Username" required onChange={
+                    (e) => {
+                      setusername(e.target.value);
+                    }
+                  }>Username</TextField>
 
-        <div className="card col-3 mt-5 ">
+                  <TextField type='password' id="password" name="password" size="medium" label="Password" required onChange={
+                    (e) => {
+                      setpassword(e.target.value);
+                    }
+                  }>Password</TextField>
 
-
-
-          <form className="mt-5" onSubmit={sendData}>
-
-
-            <div class="form-outline mb-4">
-              <input type="username" id="username" class="form-control" required onChange={
-                (e) => {
-                  setusername(e.target.value);
-                }
-              } />
-              <label class="form-label" for="form2Example1" >User Name</label>
-            </div>
-
-
-            <div class="form-outline mb-4">
-              <input type="password" id="password" class="form-control" required onChange={
-                (e) => {
-                  setpassword(e.target.value);
-                }
-              } />
-              <label class="form-label" for="form2Example2">Password</label>
-            </div>
-
-
-            <button type="button " class="btn btn-primary btn-block mb-4  form-control">Sign in</button>
-
-            <button type="button " class="btn btn-danger btn-block mb-4  form-control" onClick={() => window.location.href = "/"}>Cancel</button>
-
-
-
-          </form>
-
-        </div>
-      </div>
-
-
-    </div>
+                  <Button type="submit" color="primary" variant="contained" size="small">Sign In</Button>
+                  <Button color="error" variant="contained" size="small" onClick={() => window.location.href = "/"}>Cancel</Button>
+                </Stack>
+              </form>
+            </Stack>
+          </Paper>
+        </Stack>
+        <Stack spacing={2} direction={'column'} flex={2}></Stack>
+      </Stack>
+    </div >
   )
 
 }
