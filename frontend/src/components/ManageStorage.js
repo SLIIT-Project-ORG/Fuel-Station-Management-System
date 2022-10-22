@@ -154,7 +154,7 @@ function FuelStorageManagement() {
                                                                 <td style={{ width: "100px" }}>{val.tankcapacity}</td>
                                                                 <td style={{ width: "100px" }}>{val.availablecapacity}</td>
                                                                 
-                                                                <td style={{ width: "100px" }}><a href={`/updatefuelinventory/` + val._id} className='btn btn-warning'>Update</a>
+                                                                <td style={{ width: "100px" }}><a href={`/updatefuelstorage/` + val._id} className='btn btn-warning'>Update</a>
                                                                 <a href={`/updatefuelcapacity/` + val._id} className='btn btn-warning'>Update Capacity</a>
                                                                 
                                                                 
