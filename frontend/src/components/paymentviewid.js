@@ -122,7 +122,7 @@ export default function PaymentDetailsid() {
 
             </Stack>
             
-            <Button color="error" variant="contained" size="medium" onClick={() => window.location.href = "/"}>Cancel</Button> 
+           
            
 
 
