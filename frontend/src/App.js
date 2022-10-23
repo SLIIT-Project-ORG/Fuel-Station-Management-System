@@ -55,6 +55,22 @@ import FuelStorageCustomer from './components/StorageDetailsCustomerView';
 import UpdateFuelCapacity from './components/UpdateFuelCapacity';
 import UpdateFuelStorage from './components/updateFuelStorage';
 import FuelStorageManagement from './components/ManageStorage';
+
+//ashan
+import VehicleRegistration from './components/VehicleRegistration';
+import VehicleView from './components/VehicleView'; 
+import VehicleUpdate from './components/VehicleUpdate';
+ 
+import Admin1 from './components/AdminSideBar1';
+import Admin2 from './components/AdminSideBar2';
+import Admin3 from './components/AdminSideBar3';
+import SupplierRegistration from './components/SupplierRegistration';
+import SupplierView from './components/SupplierView';
+import SupplierUpdate from './components/SupplierUpdate';
+import FuelRequest from './components/FuelRequest';
+import FuelUpdate from './components/FuelUpdate';
+ 
+
 function App() {
   return (
     <div className="App">
@@ -118,6 +134,18 @@ function App() {
           <Route path='/updatefuelcapacity/:id' element={<UpdateFuelCapacity/>}></Route>
           <Route path='/storagecustomer' element={<FuelStorageCustomer/>}></Route>
           <Route path='/storagemanagement' element={<FuelStorageManagement/>}></Route>
+		  
+		  //ashan
+		     
+           <Route path='/vehicleregister'   element={<VehicleRegistration/>} > </Route>
+          <Route path='/vehicleview'   element={<Admin1/>} > </Route>  
+          <Route path='/updatevehicle/:id'   element={<VehicleUpdate/>} > </Route>
+          <Route path='/supplierregister'   element={<SupplierRegistration/>} > </Route>
+          <Route path='/supplierview'   element={<Admin2/>} > </Route>
+          <Route path='/updatesupplier/:id'   element={<SupplierUpdate/>} > </Route>
+          <Route path='/fuelrequest'   element={<FuelRequest/>} > </Route>
+          <Route path='/fuelview'   element={<Admin3/>} > </Route>
+          <Route path='/updaterequest/:id'   element={<FuelUpdate/>} > </Route>
 
 
 
