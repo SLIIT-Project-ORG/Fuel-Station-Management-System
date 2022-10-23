@@ -43,7 +43,7 @@ export default function AddEmployee() {
                 <Stack direction={'col'}>
                     <Paper variant="elevation" sx={{ padding: '30px', marginTop: '30px' }} >
                         <Stack spacing={2} direction={'row'}>
-                            <h2 style={{ fontFamily: 'revert', color: 'red' }}>ADD EMPLOYEE PROFILE</h2>
+                            <h2 style={{ fontFamily: 'revert', color: 'black' }}>ADD EMPLOYEE PROFILE</h2>
                         </Stack><br />
                         <div>
                             <form class="form-card" onSubmit={sendData}>
