@@ -247,7 +247,7 @@ function AdminFuelPasses() {
                                     </select>
                                 </div>
 
-                                <button type="submit" className="btn btn-success mt-4" onClick={() => { createFuelPass(fuelPassObject) }}>Add Record</button>
+                                <button type="submit" className="btn btn-success mt-4" onClick={() => createFuelPass(fuelPassObject)}>Add Record</button>
                             </form>
                         </Modal.Body>
 

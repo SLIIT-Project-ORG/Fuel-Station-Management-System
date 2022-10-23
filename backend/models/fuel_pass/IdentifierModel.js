@@ -38,7 +38,7 @@ const IdentifierSchema = new Schema({
     creatAt: {
         type: Date,
         default: Date.now(),
-        index: { expireAfterSeconds: 604800 }
+        // index: { expireAfterSeconds: 604800 }
     }
 
 })
