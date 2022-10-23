@@ -25,7 +25,7 @@ export default function UserProfileView() {
         <div>
             <div className="row mt-5"></div>
             <div className="row">
-                <h1 className="text-danger text-center mt-5">Welcome! Thank You</h1>
+                <h1 className="text-dark text-center mt-5">Welcome! Thank You</h1>
                 <div className="col-3"></div>
                 <div className="col-lg-3 d-none d-lg-flex mt-5">
                     <img src="https://uploads-ssl.webflow.com/601159b4ad387b14405d110a/601159b4ad387bdc175d1122_grahic-design-brand-identity-melbourne-patrick-staunton-future-energy-skills-photography--p-1600.jpeg"

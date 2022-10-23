@@ -10,7 +10,7 @@ import NaveBar from "./NavBar";
 export default function Home() {
 
     return (
-        <div className="">
+        <div className="back">
             <div className="mt-5 mb-5">
                 <Header />
                 <NaveBar />

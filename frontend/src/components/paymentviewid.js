@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { Box, Paper, Card, Stack, FormLabel, CardContent } from '@mui/material';
+import { Box, Paper, Card, Stack, FormLabel, CardContent,Button } from '@mui/material';
 import { fontWeight } from "@mui/system";
 
 
@@ -103,22 +103,26 @@ export default function PaymentDetailsid() {
                     
                     <Stack spacing={3} direction={'column'}>
                     <center>
-                        <Card sx={{width:"500px"}} >
+                        <Card sx={{width:"400px"}} >
                             <CardContent >
-                                <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Payment Type  :{AdminPaymentData.Payment_Type}</FormLabel>
-                                <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Payment Method:{AdminPaymentData.Payment_Method}</FormLabel>
-                                <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Price  :{AdminPaymentData.Price}</FormLabel>
+                                <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Payment Type      :{AdminPaymentData.Payment_Type}</FormLabel>
+                                <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Payment Method    :{AdminPaymentData.Payment_Method}</FormLabel>
+                                <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Price             :{AdminPaymentData.Price}</FormLabel>
                                 <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Payment Description:{AdminPaymentData.Description}</FormLabel>
                                 <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Payment Date:{AdminPaymentData.Date}</FormLabel>
                                 <FormLabel sx={{ fontWeight: 'bold', color: 'black', display: 'flex', fontSize: '20px' }}>Payment Name:{AdminPaymentData.Name_Of_Payment}</FormLabel>
                             </CardContent>
+                            
                         </Card>
+                       
                         </center>
                     </Stack>
                    
                 </Box>
 
             </Stack>
+            
+            <Button color="error" variant="contained" size="medium" onClick={() => window.location.href = "/"}>Cancel</Button> 
            
 
 
