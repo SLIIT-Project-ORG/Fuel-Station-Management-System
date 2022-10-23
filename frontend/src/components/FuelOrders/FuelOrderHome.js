@@ -2,6 +2,7 @@ import axios from 'axios';
 import { AppBar, Stack, Paper, Button, Box, FormGroup, FormControl, TextField } from '@mui/material';
 import { useState } from 'react';
 import OrderImage from '../../images/OrderPage.png';
+import ApprovePage from './ApprovePage';
 
 export const FuelOrderHome = () => {
 
@@ -21,13 +22,14 @@ export const FuelOrderHome = () => {
     }
 
     //Save Data
-    const saveFuelOrder = (obj)=>{
-        axios.post("http://localhost:8000/fuel-order/",obj)
+    const saveFuelOrder = async (obj)=>{
+        await axios.post("http://localhost:8000/fuel-order/",obj)
         .then((res)=>{
-            alert(res.data.msg);
-            console.log(res.data.data.msg);
-        }).catch((res)=>{
-            alert(res.data.msg);
+            alert("Data Saved Successfully");
+            window.location.href = "/";
+        }).catch((err)=>{
+            alert("Data save failed");
+            console.log(err.message);
         })
     }
 
@@ -44,7 +46,7 @@ export const FuelOrderHome = () => {
             <div>
                 <Box alignItems={'center'} margin={'100px'} marginTop={'150px'}>
                     <Paper variant={'outlined'} sx={{ padding: '50px' }}>
-
+                        <form onSubmit={()=>saveFuelOrder(reqObject)}>
                         <Stack rowGap={2}>
                             <div className='row'>
                                 <div className='col'>
@@ -111,12 +113,12 @@ export const FuelOrderHome = () => {
                                                 }
                                             }></TextField><br />
                                         </FormControl>
-                                        <Button variant='contained' color='primary' type='submit' onClick={()=>saveFuelOrder(reqObject)}>SUBMIT</Button>
+                                        <Button variant='contained' color='primary' type='submit'>SUBMIT</Button>
                                     </FormGroup>
                                 </div>
                             </div>
                         </Stack>
-
+                        </form>
                     </Paper>
                 </Box>
             </div>

@@ -29,7 +29,7 @@ export default function EmployeeView() {
     function deleteemployee(id) {
         axios.delete(`http://localhost:8000/admin/employeeprofile/delete/${id}`).then(() => {
             alert(" Employee Details Successfully deleted");
-            window.location.href = "/employeedetails";
+            window.location.href = "/test1";
         }).catch((err) => {
             alert(err);
         })
@@ -68,7 +68,7 @@ export default function EmployeeView() {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="table-responsive" >
+                        <div class="table-responsive">
 
                             <table class="table table-striped table-hover table-bordered" style={{ 'overflow': 'scroll', 'width': '1300px' }}>
                                 <thead>

@@ -34,11 +34,6 @@ const IdentifierSchema = new Schema({
     reference_no: {
         type: String,
         required: true
-    },
-    creatAt: {
-        type: Date,
-        default: Date.now(),
-        // index: { expireAfterSeconds: 604800 }
     }
 
 })

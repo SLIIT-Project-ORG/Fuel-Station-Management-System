@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import "../styles/Admin.css";
+import "../../styles/Admin.css";
+import { AdminFuelOrderView } from './AdminFuelOrderView';
 
-import AddPayment from './AddPayment';
-
-
-
-
-export default function Test4() {
+export default function AdminFuelOrderView1() {
     return (
         <div>
             <div className=" display-table mt-5 ">
@@ -19,7 +15,7 @@ export default function Test4() {
                         <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
                         <div className="navi">
                             <ul>
-                                <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                                <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
                                 <li><a href="/fueldetailsmanage"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
                                 <li><a href="/admin/fuelOrderView/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
                                 <li><a href="/manageinventory"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
@@ -82,7 +78,9 @@ export default function Test4() {
 
 
                         </div>
-                        <AddPayment />
+
+                        <AdminFuelOrderView />
+
                     </div>
                 </div>
 
