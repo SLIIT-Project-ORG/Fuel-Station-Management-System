@@ -62,7 +62,7 @@ export default function PaymentDetails() {
 
                                 </div>
                             </div>
-                            <div class="col-sm-3 offset-sm-2  mb-4 text-gred text-danger" ><h2><b>Payment Details</b></h2></div>
+                            <div class="col-sm-3 offset-sm-2  mb-4 text-gred text-danger" ><h2><b>PAYMENT DETAILS</b></h2></div>
 
                             <div class="col-sm-3 offset-sm-1  mt-5 mb-4 text-gred">
 

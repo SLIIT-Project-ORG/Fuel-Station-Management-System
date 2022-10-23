@@ -117,3 +117,8 @@
 .meta a:hover {
     color: rgba(0, 0, 0, .87);
 }
+
+.back{
+    background-color: rgb(167, 194, 227);
+  
+}
