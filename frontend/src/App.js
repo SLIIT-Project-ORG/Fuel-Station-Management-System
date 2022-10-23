@@ -59,6 +59,8 @@ import FuelStorageCustomer from './components/StorageDetailsCustomerView';
 import UpdateFuelCapacity from './components/UpdateFuelCapacity';
 import UpdateFuelStorage from './components/updateFuelStorage';
 import FuelStorageManagement from './components/ManageStorage';
+import AdminFuelOrderView1 from './components/FuelOrders/AdminFuelOrderView1';
+import UserCreationFuelPass from './components/UserCreateFuelPass';
 function App() {
   return (
     <div className="App">
@@ -104,7 +106,7 @@ function App() {
           <Route path='/admin/fuelPass/update/:id' element={<AdminFuelPassUpdate1 />}></Route> 
 
           <Route path='/user/fuelOrderHome' element={<FuelOrderHome/>}/>
-          <Route path='/admin/fuelOrderView' element={<AdminFuelOrderView/>}/>
+          <Route path='/admin/fuelOrderView' element={<AdminFuelOrderView1/>}/>
 
 
 
@@ -122,13 +124,7 @@ function App() {
           <Route path='/updatefuelcapacity/:id' element={<UpdateFuelCapacity/>}></Route>
           <Route path='/storagecustomer' element={<FuelStorageCustomer/>}></Route>
           <Route path='/storagemanagement' element={<FuelStorageManagement/>}></Route>
-
-
-
-
-
-
-
+          <Route path="/pass-register" element={<UserCreationFuelPass/>}></Route>
         </Routes>
       </Router>
 
