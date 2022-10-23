@@ -12,8 +12,7 @@ export default function NaveBar() {
             <Button><a href="/" style={{ textDecoration: "none" }}>Current Fuel Prices</a></Button>
             <Button><a href="/userprofile" style={{ textDecoration: "none" }}>Employee Profile</a></Button>
             <Button><a href="/user/fuelpass/login" style={{ textDecoration: "none" }}>Fuel Pass</a></Button>
-            <Button><a href="/" style={{ textDecoration: "none" }}>Fuel Order</a></Button>
-
+            <Button><a href="/user/fuelOrderHome" style={{ textDecoration: "none" }}>Fuel Order</a></Button>
         </div>
 
 

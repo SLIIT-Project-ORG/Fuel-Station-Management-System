@@ -24,7 +24,7 @@ class EditFuelStorage extends Component {
     this.onChangeavailablecapacity = this.onChangeavailablecapacity.bind(this);
 
 
-   
+
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -33,7 +33,7 @@ class EditFuelStorage extends Component {
       fuelquality: "",
       cypetcoitemno: "",
       availablecapacity: "",
-      
+
       records: [],
     };
   }
@@ -49,7 +49,7 @@ class EditFuelStorage extends Component {
           availablecapacity: response.data.availablecapacity,
           fuelquality: response.data.fuelquality,
           cypetcoitemno: response.data.cypetcoitemno,
-          
+
         });
       })
       .catch(function (error) {
@@ -86,7 +86,7 @@ class EditFuelStorage extends Component {
       cypetcoitemno: e.target.value,
     });
   }
- 
+
 
 
   onSubmit(e) {
@@ -97,7 +97,7 @@ class EditFuelStorage extends Component {
       availablecapacity: this.state.availablecapacity,
       fuelquality: this.state.fuelquality,
       cypetcoitemno: this.state.cypetcoitemno,
-      
+
     };
     console.log(newEditedProduct);
 
@@ -129,16 +129,15 @@ class EditFuelStorage extends Component {
               <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
               <div className="navi">
                 <ul>
-                <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
-                <li><a href="/fueldetailsmanage"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
-                <li><a href="/manageinventory"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
-                <li><a href="/storagemanagement"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Storage Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Supplier Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Vehicle Management</span></a></li>
-
+                  <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                  <li><a href="/fueldetailsmanage"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
+                  <li><a href="/admin/fuelOrderView/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
+                  <li><a href="/manageinventory"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
+                  <li><a href="/storagemanagement"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Storage Management</span></a></li>
+                  <li><a href="/admin/allfuelpass"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
+                  <li><a href="/payment"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
+                  <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Supplier Management</span></a></li>
+                  <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Vehicle Management</span></a></li>
                 </ul>
               </div>
             </div>
@@ -282,7 +281,7 @@ class EditFuelStorage extends Component {
                                 />
                               </div>
                             </div>
-                           
+
 
                             <br />
 
