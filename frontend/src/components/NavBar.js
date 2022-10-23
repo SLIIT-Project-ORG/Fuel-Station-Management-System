@@ -7,7 +7,7 @@ export default function NaveBar() {
 
     return (
 
-        <div className="navbar mt-4 mb-4 bg-light">
+        <div className="navbar mt-4 mb-4 ">
             <Button><a href="/" style={{ textDecoration: "none" }}>Available Fuel Stock</a></Button>
             <Button><a href="/" style={{ textDecoration: "none" }}>Current Fuel Prices</a></Button>
             <Button><a href="/userprofile" style={{ textDecoration: "none" }}>Employee Profile</a></Button>

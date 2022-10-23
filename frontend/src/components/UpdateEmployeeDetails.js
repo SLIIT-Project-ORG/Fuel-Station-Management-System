@@ -52,7 +52,7 @@ return (
           <div class="container-fluid px-1 py-5 mx-auto">
   <div class="row d-flex justify-content-center">
       <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-      <h1 className="text-danger">Update Employee Profile</h1>
+      <h1 className="text-dARK">UPDATE EMPLOYEE PROFILE</h1>
           
           <div class="card p-5">
            
