@@ -25,6 +25,11 @@ const order = require("./routes/fuel_order/OrderRoute.js");
 const fueldetailRouter= require("./routes/FuelDetails");
 const fuelInventorydetailRouter= require("./routes/FuelInventory");
 const fuelstoragedetailRouter= require("./routes/FuelStorage");
+
+let VehicleRegistration = require('./routes/VehicleRegistrations');
+let SupplierRegistration = require('./routes/SupplierRegistrations');
+let FuelRequest = require('./routes/FuelRequests');
+ 
 //End
 
 //Set route paths
@@ -41,6 +46,10 @@ app.use("/fuel-order", order);
 app.use("/fueldetail",fueldetailRouter);
 app.use("/fuelinventory",fuelInventorydetailRouter);
 app.use("/fuelstorage",fuelstoragedetailRouter);
+
+app.use('/VehicleRegistration',VehicleRegistration);
+app.use('/SupplierRegistration',SupplierRegistration);
+app.use('/FuelRequest',FuelRequest);
 
 //End
 

@@ -18,6 +18,34 @@ li,ul{
     height: 100vh;
     display: table;
 }
+.del{
+  color:red;
+}
+
+.badd{
+  color:rgb(238, 232, 232);
+  background-color:rgb(87, 87, 236);
+
+}
+.bbdd{
+  color:rgb(238, 232, 232);
+  background-color:rgb(6, 150, 13);
+}
+.ba{
+   
+  text-align: right;
+
+
+}
+
+.ab{
+  text-align: right;
+}
+.container{
+  text-align: left;
+  background-color:rgba(219, 213, 213, 0.849);
+
+}
 
 .login-header {
     display: inline-block;
@@ -242,7 +270,7 @@ li,ul{
 }
 
 .header-top i {
-    color: #d52727;
+    color: #f60909;
 }
 
 .icon-info {
@@ -335,8 +363,8 @@ header {
 }
 
 .navi a {
-    border-bottom: 1px solid #d52727;
-    border-top: 1px solid #d52727;
+    border-bottom: 1px solid #136e45;
+    border-top: 1px solid #136e40;
     color: #ffffff;
     display: block;
     font-size: 17px;
@@ -357,8 +385,8 @@ header {
 }
 
 .navi a:hover {
-    background:#d52727 none repeat scroll 0 0;
-    border-left: 5px solid #d52727;
+    background:#cc1964 none repeat scroll 0 0;
+    border-left: 5px solid #f11bb1;
     display: block;
     padding-left: 5px;
 }
