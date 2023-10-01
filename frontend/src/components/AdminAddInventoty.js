@@ -33,12 +33,6 @@ export default function AddFuelInventory() {
   }
 
   return (
-
-
-
-
-
-
     <div>
       <div className=" display-table mt-5 ">
         <div className="row display-table-row mt-5">
@@ -110,10 +104,7 @@ export default function AddFuelInventory() {
                   </div>
                 </div>
               </header>
-
-
             </div>
-
 
             {/* our code */}<div >
               <div class="p-5 mb-4 bg-dark rounded-3">
@@ -216,11 +207,6 @@ export default function AddFuelInventory() {
 
                     </div>
                   </div>
-
-
-
-
-
                   <br />
                   <div className="col-12">
                     <button className="btn btn-primary" type="submit">Submit form</button>
@@ -228,27 +214,9 @@ export default function AddFuelInventory() {
                 </form>
               </div>
             </div>
-
-
-
           </div>
         </div>
-
       </div>
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
   )
 }

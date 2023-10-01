@@ -209,8 +209,6 @@ class EditFuelDetails extends Component {
                 </header>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <a href="/fueldetailsmanage" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
-
-
                 </div>
                 <div className="container">
 
@@ -319,32 +317,11 @@ class EditFuelDetails extends Component {
                 </div>
               </div>
               {/* our code */}
-
-
-
             </div>
           </div>
-
         </div>
-
-
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
     );
   }
-
-
 }
 export default withRouter(EditFuelDetails);

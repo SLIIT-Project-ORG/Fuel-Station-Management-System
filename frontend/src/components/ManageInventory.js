@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
-import Admin from './AdminSideBar';
 import "../styles/Admin.css";
-import InventoryReportView from "./InventoryView";
 
+import InventoryReportView from "./InventoryView";
 
 function FuelInventoryManagement() {
 
     const [fueldetails, setfueldetails] = useState([]);
     const [searchData, setSearchData] = useState("");
     const [data, setData] = useState([]);
+
     useEffect(() => {
         axios.get(`http://localhost:8000/fuelinventory/`)
             .then((fueldetails) => {
@@ -21,7 +21,6 @@ function FuelInventoryManagement() {
                 console.error(err.message);
             });
     }, []);
-
 
     function deleteMovie(id) {
         axios.delete(`http://localhost:8000/fuelinventory/delete/${id}`)
@@ -34,8 +33,6 @@ function FuelInventoryManagement() {
     }
 
     return (
-
-
 
         <div>
             <div className=" display-table mt-5 ">
@@ -131,6 +128,7 @@ function FuelInventoryManagement() {
                             </div>
 
 
+
                             <br></br>
                             <br></br>
                             <form className="form-inline">
@@ -151,7 +149,6 @@ function FuelInventoryManagement() {
                                                     <th scope="col">Cypetco Item No</th>
                                                     <th scope="col">Unloaded Capacity</th>
                                                     <th scope="col">Unloaded Date</th>
-
                                                     <th scope="col">Options</th>
                                                 </tr>
                                             </thead>
@@ -176,10 +173,6 @@ function FuelInventoryManagement() {
                                                         }
 
                                                     })
-
-
-
-
                                                         .map((val, key) => {
                                                             return (
                                                                 <tr>
@@ -269,32 +262,11 @@ function FuelInventoryManagement() {
                         </div >
                     </div >
                     <div>
-
-                        {/* our code */}
-
-
-
                     </div>
                 </div>
 
             </div>
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
     );
 }
 

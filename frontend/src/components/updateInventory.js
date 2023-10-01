@@ -22,9 +22,6 @@ class EditInventoryDetails extends Component {
     this.onChangecypetcoitemno = this.onChangecypetcoitemno.bind(this);
     this.onChangeUnloadedCapacity = this.onChangeUnloadedCapacity.bind(this);
     this.onChangeunloadeddate = this.onChangeunloadeddate.bind(this);
-
-
-
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -33,7 +30,6 @@ class EditInventoryDetails extends Component {
       fuelquality: "",
       cypetcoitemno: "",
       unloadeddate: "",
-
       records: [],
     };
   }
@@ -49,7 +45,6 @@ class EditInventoryDetails extends Component {
           unloadeddate: response.data.unloadeddate,
           fuelquality: response.data.fuelquality,
           cypetcoitemno: response.data.cypetcoitemno,
-
         });
       })
       .catch(function (error) {
@@ -87,8 +82,6 @@ class EditInventoryDetails extends Component {
     });
   }
 
-
-
   onSubmit(e) {
     e.preventDefault();
     const newEditedProduct = {
@@ -97,7 +90,6 @@ class EditInventoryDetails extends Component {
       unloadeddate: this.state.unloadeddate,
       fuelquality: this.state.fuelquality,
       cypetcoitemno: this.state.cypetcoitemno,
-
     };
     console.log(newEditedProduct);
 
@@ -114,10 +106,6 @@ class EditInventoryDetails extends Component {
   }
   render() {
     return (
-
-
-
-
       <div>
         <div className=" display-table mt-5 ">
           <div className="row display-table-row mt-5">
@@ -205,8 +193,6 @@ class EditInventoryDetails extends Component {
                 </header>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <a href="/manageinventory" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
-
-
                 </div>
                 <div className="container">
 
@@ -281,16 +267,12 @@ class EditInventoryDetails extends Component {
                                 />
                               </div>
                             </div>
-
-
                             <br />
-
                             <div className="form-group row">
                               <input
                                 type="submit"
                                 value="Update Record"
                                 className="btn btn-primary"
-
                               />
                             </div>
                           </div>
@@ -304,32 +286,11 @@ class EditInventoryDetails extends Component {
                 </div>
               </div>
               {/* our code */}
-
-
-
             </div>
           </div>
-
         </div>
-
-
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
     );
   }
-
-
 }
 export default withRouter(EditInventoryDetails);

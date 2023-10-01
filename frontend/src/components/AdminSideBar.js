@@ -1,10 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "../styles/Admin.css";
-import AddEmployee from './AddEmployee';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import EmployeeView from './EmployeeView';
-
-
 
 export default function Admin() {
   return (
@@ -78,25 +73,11 @@ export default function Admin() {
 
                   </div>
                 </div>
-              </header>
-
-
+              </header>          
             </div>
-
-
-
-
-
-
-          </div>
         </div>
-
       </div>
-
-
-
-
     </div>
-
+  </div>
   )
 }

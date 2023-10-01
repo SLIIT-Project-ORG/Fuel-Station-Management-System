@@ -13,6 +13,12 @@ app.use(express.json());
 const PORT = process.env.PORT;
 
 //For Route declareration
+const fueldetailRouter= require("./routes/FuelDetails");
+app.use("/fueldetail",fueldetailRouter);
+const fuelInventorydetailRouter= require("./routes/FuelInventory");
+app.use("/fuelinventory",fuelInventorydetailRouter);
+const fuelstoragedetailRouter= require("./routes/FuelStorage");
+app.use("/fuelstorage",fuelstoragedetailRouter);
 
 let employeeprofile = require("./routes/Employee__Profiles_Page.js");
 let ppayment = require("./routes/Payments");
@@ -21,10 +27,6 @@ let alogin = require("./routes/AdminRoute");
 const identifier = require("./routes/fuel_pass/IdentifierRoute.js");
 const quantity = require("./routes/fuel_pass/QuantityRoute.js");
 const order = require("./routes/fuel_order/OrderRoute.js");
-
-const fueldetailRouter= require("./routes/FuelDetails");
-const fuelInventorydetailRouter= require("./routes/FuelInventory");
-const fuelstoragedetailRouter= require("./routes/FuelStorage");
 
 let VehicleRegistration = require('./routes/VehicleRegistrations');
 let SupplierRegistration = require('./routes/SupplierRegistrations');
@@ -52,11 +54,6 @@ app.use('/SupplierRegistration',SupplierRegistration);
 app.use('/FuelRequest',FuelRequest);
 
 //End
-
-
-
-
-
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
 })

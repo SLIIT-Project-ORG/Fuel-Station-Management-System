@@ -23,8 +23,6 @@ class EditFuelStorage extends Component {
     this.onChangetankcapacity = this.onChangetankcapacity.bind(this);
     this.onChangeavailablecapacity = this.onChangeavailablecapacity.bind(this);
 
-
-
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -33,7 +31,6 @@ class EditFuelStorage extends Component {
       fuelquality: "",
       cypetcoitemno: "",
       availablecapacity: "",
-
       records: [],
     };
   }
@@ -49,7 +46,6 @@ class EditFuelStorage extends Component {
           availablecapacity: response.data.availablecapacity,
           fuelquality: response.data.fuelquality,
           cypetcoitemno: response.data.cypetcoitemno,
-
         });
       })
       .catch(function (error) {
@@ -87,8 +83,6 @@ class EditFuelStorage extends Component {
     });
   }
 
-
-
   onSubmit(e) {
     e.preventDefault();
     const newEditedProduct = {
@@ -97,10 +91,8 @@ class EditFuelStorage extends Component {
       availablecapacity: this.state.availablecapacity,
       fuelquality: this.state.fuelquality,
       cypetcoitemno: this.state.cypetcoitemno,
-
     };
     console.log(newEditedProduct);
-
 
     axios
       .put(
@@ -114,10 +106,6 @@ class EditFuelStorage extends Component {
   }
   render() {
     return (
-
-
-
-
       <div>
         <div className=" display-table mt-5 ">
           <div className="row display-table-row mt-5">
@@ -281,16 +269,12 @@ class EditFuelStorage extends Component {
                                 />
                               </div>
                             </div>
-
-
                             <br />
-
                             <div className="form-group row">
                               <input
                                 type="submit"
                                 value="Update Record"
                                 className="btn btn-primary"
-
                               />
                             </div>
                           </div>
@@ -304,32 +288,11 @@ class EditFuelStorage extends Component {
                 </div>
               </div>
               {/* our code */}
-
-
-
             </div>
           </div>
-
         </div>
-
-
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
     );
   }
-
-
 }
 export default withRouter(EditFuelStorage);

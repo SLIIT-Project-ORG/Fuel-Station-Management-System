@@ -138,7 +138,6 @@ function FuelStorageManagement() {
                                                     <th scope="col">Cypetco Item No</th>
                                                     <th scope="col">Tank Capacity</th>
                                                     <th scope="col">Available Capacity</th>
-
                                                     <th scope="col">Options</th>
                                                 </tr>
                                             </thead>
@@ -155,8 +154,6 @@ function FuelStorageManagement() {
 
                                                                 <td style={{ width: "100px" }}><a href={`/updatefuelstorage/` + val._id} className='btn btn-warning'>Update</a>
                                                                     <a href={`/updatefuelcapacity/` + val._id} className='btn btn-warning'>Update Capacity</a>
-
-
                                                                     <Popup
                                                                         trigger={<button className="btn btn-danger"> Delete </button>}
                                                                         modal
@@ -202,7 +199,6 @@ function FuelStorageManagement() {
                                                                                     <p className="card-text">cypetco item no: {val.cypetcoitemno}</p>
                                                                                     <span className="card-text">Tank capacity: {val.tankcapacity}</span> <br />
                                                                                     <span className="card-text">Available Capacity: {val.availablecapacity}</span><br />
-
                                                                                     <div className>
                                                                                         <br></br>
                                                                                         <button
@@ -246,18 +242,6 @@ function FuelStorageManagement() {
 
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
     );
 }
 
