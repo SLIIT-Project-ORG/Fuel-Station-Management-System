@@ -9,10 +9,8 @@ import UserLogin from './components/UserProfileLogin';
 import UserProfileView from './components/UserProfileView';
 import UpdateEmployee from './components/UpdateEmployeeDetails';
 import Home from './components/HomePage';
-import Admin from './components/AdminSideBar';
 import EmployeeReportView from './components/EmployeeReportView';
 import UpdatePayment from './components/UpdatePaymentDetails';
-import Test from './components/Test';
 import Test1 from './components/Test1';
 import Test4 from './components/Test4';
 import Test5 from './components/Test5';
@@ -52,7 +50,6 @@ import FuelStorageManagement from './components/ManageStorage';
 
 //ashan
 import VehicleRegistration from './components/VehicleRegistration';
-import VehicleView from './components/VehicleView'; 
 import VehicleUpdate from './components/VehicleUpdate'; 
 import Admin1 from './components/AdminSideBar1';
 import Admin2 from './components/AdminSideBar2';
