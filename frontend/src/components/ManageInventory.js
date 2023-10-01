@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Popup from 'reactjs-popup';
-import Admin from './AdminSideBar';
 import "../styles/Admin.css";
+
+import InventoryReportView from "./InventoryView";
+
 function FuelInventoryManagement() {
 
     const [fueldetails, setfueldetails] = useState([]);
+    const [searchData, setSearchData] = useState("");
+    const [data, setData] = useState([]);
+
     useEffect(() => {
         axios.get(`http://localhost:8000/fuelinventory/`)
             .then((fueldetails) => {
@@ -17,7 +22,6 @@ function FuelInventoryManagement() {
             });
     }, []);
 
-
     function deleteMovie(id) {
         axios.delete(`http://localhost:8000/fuelinventory/delete/${id}`)
             .then(() => {
@@ -28,34 +32,7 @@ function FuelInventoryManagement() {
         window.location.reload();
     }
 
-
-//    function filterData(records,searchKey){
-//         const result=records.filter((inventory)=>
-//         inventory.name.toLowerCase().includes(searchKey)||
-//         inventory.location.toLowerCase().includes(searchKey)||
-//         inventory.type.toLowerCase().includes(searchKey)
-        
-        
-//         )
-//         this.setState({records:result})
-//      }
-    
- 
-//      handleSerchArea=(e) =>{
-         
-//          const searchKey=e.currentTarget.value;
-//          console.log(searchKey);
-//          axios
-//          .get("http://localhost:8000/accommodation/")
-//          .then((response) => {
-//            this.filterData(response.data,searchKey);
-//            console.log("successfull");
-//          });
-//      }
-
     return (
-
-
 
         <div>
             <div className=" display-table mt-5 ">
@@ -68,15 +45,15 @@ function FuelInventoryManagement() {
                         <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
                         <div className="navi">
                             <ul>
-                                <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
-                                <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
+                                <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                                <li><a href="/fueldetailsmanage"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
+                                <li><a href="/admin/fuelOrderView/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
+                                <li><a href="/manageinventory"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
+                                <li><a href="/storagemanagement"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Storage Management</span></a></li>
+                                <li><a href="/admin/allfuelpass"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
+                                <li><a href="/payment"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
                                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Supplier Management</span></a></li>
                                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Vehicle Management</span></a></li>
-
                             </ul>
                         </div>
                     </div>
@@ -149,12 +126,18 @@ function FuelInventoryManagement() {
 
 
                             </div>
+
+
+
                             <br></br>
                             <br></br>
-                            <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={this.handleSerchArea} />
-                            
-                        </form>
+                            <form className="form-inline">
+                                <input className="form-control mr-sm-2 border border-dark" type="search" name="searchField" placeholder="Search Fuel Inventory" aria-label="Search" onChange={
+                                    (e) => {
+                                        setSearchData(e.target.value)
+                                    }
+                                } />
+                            </form>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="table-wrap">
@@ -166,123 +149,124 @@ function FuelInventoryManagement() {
                                                     <th scope="col">Cypetco Item No</th>
                                                     <th scope="col">Unloaded Capacity</th>
                                                     <th scope="col">Unloaded Date</th>
-                                                
                                                     <th scope="col">Options</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {
-                                                    fueldetails.map((val, key) => {
-                                                        return (
-                                                            <tr>
-                                                                <td style={{ width: "100px" }}>{val.fueltype}</td>
-                                                                <td style={{ width: "100px" }}>{val.fuelquality}</td>
-                                                                <td style={{ width: "100px" }}>{val.cypetcoitemno}</td>
-                                                                <td style={{ width: "100px" }}>{val.UnloadedCapacity}</td>
-                                                                <td style={{ width: "100px" }}>{val.unloadeddate}</td>
-                                                                
-                                                                <td style={{ width: "100px" }}><a href={`/updatefuelstorage/` + val._id} className='btn btn-warning'>Update</a>
-                                                                    <Popup
-                                                                        trigger={<button className="btn btn-danger"> Delete </button>}
-                                                                        modal
-                                                                        nested
-                                                                    >
-                                                                        {close => (
-                                                                            <div className="container-fluid" style={{ padding: 5 }}>
+                                                    fueldetails.filter(value => {
 
+                                                        if (searchData === "") {
 
+                                                            return value;
 
-                                                                                <div className="h-100 p-5 bg-light border rounded-3">
-                                                                                    <h1 className="card-title">Delete This Field ?</h1>
-                                                                                    <div className>
-                                                                                        <br></br>
-                                                                                        <button
-                                                                                            className="btn btn-success"
-                                                                                            onClick={() => {
-                                                                                                console.log('modal closed ');
-                                                                                                close();
-                                                                                            }}
-                                                                                        >
-                                                                                            Cancle
-                                                                                        </button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                                                        <button className='btn btn-danger' onClick={() => deleteMovie(val._id)}>Delete</button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        )}
-                                                                    </Popup>
-                                                                    <Popup
-                                                                        trigger={<button className="btn btn-info"> View Detail </button>}
-                                                                        modal
-                                                                        nested
-                                                                    >
-                                                                        {close => (
-                                                                            <div className="container-fluid" style={{ padding: 5 }}>
+                                                        } else if (
 
+                                                            value.fueltype.toLowerCase().includes(searchData.toLowerCase()) ||
+                                                            value.unloadeddate.toLowerCase().includes(searchData.toLowerCase()) ||
+                                                            value.fuelquality.toLowerCase().includes(searchData.toLowerCase())
 
+                                                        ) {
 
-                                                                                <div className="h-100 p-5 bg-light border rounded-3">
-                                                                                    <h1 className="card-title">Fuel Type: {val.fueltype}</h1>
-                                                                                    <p className="card-text">fuel quality: {val.fuelquality}</p>
-                                                                                    <p className="card-text">cypetco item no: {val.cypetcoitemno}</p>
-                                                                                    <span className="card-text">unloaded Capacity: {val.UnloadedCapacity}</span> <br />
-                                                                                    <span className="card-text">unloaded date: {val.unloadeddate}</span><br />
-                                                                                    
-                                                                                    <div className>
-                                                                                        <br></br>
-                                                                                        <button
-                                                                                            className="btn btn-outline-danger"
-                                                                                            onClick={() => {
-                                                                                                console.log('modal closed ');
-                                                                                                close();
-                                                                                            }}
-                                                                                        >
-                                                                                            Close
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        )}
-                                                                    </Popup>
+                                                            return value;
 
+                                                        }
 
-                                                                </td>
-                                                            </tr>
-                                                        )
                                                     })
+                                                        .map((val, key) => {
+                                                            return (
+                                                                <tr>
+                                                                    <td style={{ width: "100px" }}>{val.fueltype}</td>
+                                                                    <td style={{ width: "100px" }}>{val.fuelquality}</td>
+                                                                    <td style={{ width: "100px" }}>{val.cypetcoitemno}</td>
+                                                                    <td style={{ width: "100px" }}>{val.UnloadedCapacity}</td>
+                                                                    <td style={{ width: "100px" }}>{val.unloadeddate}</td>
+
+                                                                    <td style={{ width: "100px" }}><a href={`/updatefuelstorage/` + val._id} className='btn btn-warning'>Update</a>
+                                                                        <Popup
+                                                                            trigger={<button className="btn btn-danger"> Delete </button>}
+                                                                            modal
+                                                                            nested
+                                                                        >
+                                                                            {close => (
+                                                                                <div className="container-fluid" style={{ padding: 5 }}>
+
+
+
+                                                                                    <div className="h-100 p-5 bg-light border rounded-3">
+                                                                                        <h1 className="card-title">Delete This Field ?</h1>
+                                                                                        <div className>
+                                                                                            <br></br>
+                                                                                            <button
+                                                                                                className="btn btn-success"
+                                                                                                onClick={() => {
+                                                                                                    console.log('modal closed ');
+                                                                                                    close();
+                                                                                                }}
+                                                                                            >
+                                                                                                Cancle
+                                                                                            </button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                                                            <button className='btn btn-danger' onClick={() => deleteMovie(val._id)}>Delete</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            )}
+                                                                        </Popup>
+                                                                        <Popup
+                                                                            trigger={<button className="btn btn-info"> View Detail </button>}
+                                                                            modal
+                                                                            nested
+                                                                        >
+                                                                            {close => (
+                                                                                <div className="container-fluid" style={{ padding: 5 }}>
+
+
+
+                                                                                    <div className="h-100 p-5 bg-light border rounded-3">
+                                                                                        <h1 className="card-title">Fuel Type: {val.fueltype}</h1>
+                                                                                        <p className="card-text">fuel quality: {val.fuelquality}</p>
+                                                                                        <p className="card-text">cypetco item no: {val.cypetcoitemno}</p>
+                                                                                        <span className="card-text">unloaded Capacity: {val.UnloadedCapacity}</span> <br />
+                                                                                        <span className="card-text">unloaded date: {val.unloadeddate}</span><br />
+
+                                                                                        <div className>
+                                                                                            <br></br>
+                                                                                            <button
+                                                                                                className="btn btn-outline-danger"
+                                                                                                onClick={() => {
+                                                                                                    console.log('modal closed ');
+                                                                                                    close();
+                                                                                                }}
+                                                                                            >
+                                                                                                Close
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            )}
+                                                                        </Popup>
+
+
+                                                                    </td>
+                                                                </tr>
+                                                            )
+                                                        })
                                                 }
                                             </tbody>
                                         </table>
-                                    </div >
+                                        <br></br>
+                                        <div><InventoryReportView /></div>
+                                    </div>
                                 </div >
                             </div >
                         </div >
-
-                        {/* our code */}
-
-
-
+                    </div >
+                    <div>
                     </div>
                 </div>
 
             </div>
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
     );
 }
 

@@ -23,8 +23,6 @@ class EditFuelCapacity extends Component {
     this.onChangetankcapacity = this.onChangetankcapacity.bind(this);
     this.onChangeavailablecapacity = this.onChangeavailablecapacity.bind(this);
 
-
-   
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -33,7 +31,6 @@ class EditFuelCapacity extends Component {
       fuelquality: "",
       cypetcoitemno: "",
       availablecapacity: "",
-      
       records: [],
     };
   }
@@ -49,7 +46,6 @@ class EditFuelCapacity extends Component {
           availablecapacity: response.data.availablecapacity,
           fuelquality: response.data.fuelquality,
           cypetcoitemno: response.data.cypetcoitemno,
-          
         });
       })
       .catch(function (error) {
@@ -86,8 +82,6 @@ class EditFuelCapacity extends Component {
       cypetcoitemno: e.target.value,
     });
   }
- 
-
 
   onSubmit(e) {
     e.preventDefault();
@@ -97,10 +91,8 @@ class EditFuelCapacity extends Component {
       availablecapacity: this.state.availablecapacity,
       fuelquality: this.state.fuelquality,
       cypetcoitemno: this.state.cypetcoitemno,
-      
     };
     console.log(newEditedProduct);
-
 
     axios
       .put(
@@ -117,7 +109,6 @@ class EditFuelCapacity extends Component {
 
 
 
-
       <div>
         <div className=" display-table mt-5 ">
           <div className="row display-table-row mt-5">
@@ -129,15 +120,15 @@ class EditFuelCapacity extends Component {
               <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
               <div className="navi">
                 <ul>
-                  <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
-                  <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
-                  <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
-                  <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
-                  <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
-                  <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
+                  <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                  <li><a href="/fueldetailsmanage"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
+                  <li><a href="/admin/fuelOrderView/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
+                  <li><a href="/manageinventory"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
+                  <li><a href="/storagemanagement"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Storage Management</span></a></li>
+                  <li><a href="/admin/allfuelpass"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
+                  <li><a href="/payment"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
                   <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Supplier Management</span></a></li>
                   <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Vehicle Management</span></a></li>
-
                 </ul>
               </div>
             </div>
@@ -204,9 +195,7 @@ class EditFuelCapacity extends Component {
                   </div>
                 </header>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <a href="http://localhost:3000/fueldetailsmanage" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
-
-
+                  <a href="/storagemanagement" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
                 </div>
                 <div className="container">
 
@@ -256,7 +245,7 @@ class EditFuelCapacity extends Component {
                             </div>
                             <div className="form-group row">
                               <div class="form-group col-md-6">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">tankcapacity: </label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Tank capacity: </label>
                                 <input
                                   type="Number"
                                   readonly class="form-control-plaintext" id="staticEmail"
@@ -267,9 +256,9 @@ class EditFuelCapacity extends Component {
                             </div>
                             <div className="form-group row">
                               <div class="form-group col-md-6">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">availablecapacity: </label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Available capacity  liters: </label>
                                 <input
-                                  type="date"
+                                  type="Number"
                                   className="form-control"
                                   id="inputEmail4"
                                   value={this.state.availablecapacity}
@@ -277,16 +266,12 @@ class EditFuelCapacity extends Component {
                                 />
                               </div>
                             </div>
-                           
-
                             <br />
-
                             <div className="form-group row">
                               <input
                                 type="submit"
                                 value="Update Record"
                                 className="btn btn-primary"
-
                               />
                             </div>
                           </div>
@@ -294,7 +279,7 @@ class EditFuelCapacity extends Component {
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <img src={`https://img.freepik.com/free-vector/gas-station-cartoon-icon-illustration_138676-2605.jpg?w=740&t=st=1662570181~exp=1662570781~hmac=c8490dece8f25e8e3fa29e53397313c0279b2c1209eba50b56b789d919a2ea0e`} class="img-fluid" alt="..." />
+                      <img src={`https://img.freepik.com/premium-vector/fuel-indicator-gas-petrol-gasoline-diesel-level-count-fuel-gauge-scales-icon-car-gauge-measuring-fuel-consumption-control-gas-tank-fullness-performance-measurement-vector_342166-331.jpg?w=740`} class="img-fluid" alt="..." />
                     </div>
                   </div>
                 </div>
@@ -307,25 +292,8 @@ class EditFuelCapacity extends Component {
           </div>
 
         </div>
-
-
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
     );
   }
-
-
 }
 export default withRouter(EditFuelCapacity);

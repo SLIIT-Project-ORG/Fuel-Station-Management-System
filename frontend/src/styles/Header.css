@@ -5,7 +5,7 @@
   font-weight: 400;
   line-height: 1.5;
   color: #111213;
-  background-color: #f7f7f7;
+  background-color: #302e2e;
 }
 
 
@@ -144,10 +144,7 @@ li {
 .bg-image-full {
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;
 }
 
 .bg-dark {

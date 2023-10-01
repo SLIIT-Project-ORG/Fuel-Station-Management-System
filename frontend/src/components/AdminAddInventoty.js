@@ -1,45 +1,39 @@
-import React,{useState} from "react"
+import React, { useState } from "react"
 import axios from "axios";
 import "../styles/Admin.css";
 
-export default function AddFuelInventory(){
+export default function AddFuelInventory() {
 
-    
-    const[fueltype, setfueltype]= useState("");
-    const[fuelquality, setfuelquality]= useState("");
-    const[cypetcoitemno, setcypetcoitemno]= useState("");
-    const[UnloadedCapacity, setUnloadedCapacity]= useState("");
-    const[unloadeddate, setunloadeddate]= useState("");
 
-    
+  const [fueltype, setfueltype] = useState("");
+  const [fuelquality, setfuelquality] = useState("");
+  const [cypetcoitemno, setcypetcoitemno] = useState("");
+  const [UnloadedCapacity, setUnloadedCapacity] = useState("");
+  const [unloadeddate, setunloadeddate] = useState("");
 
-    function sendData(e){
-        e.preventDefault();
-        const newfueldetail={
-          
-          fueltype,
-          fuelquality,
-          cypetcoitemno,
-          UnloadedCapacity,
-          unloadeddate
-          
-        }
-        //console.log(newfueldetail);
-        axios.post("http://localhost:8000/fuelinventory/add",newfueldetail).then(()=>{
-          alert("Fuel Detais added")
-        }).catch((err)=>{
-           alert(err)
-        })  
+
+
+  function sendData(e) {
+    e.preventDefault();
+    const newfueldetail = {
+
+      fueltype,
+      fuelquality,
+      cypetcoitemno,
+      UnloadedCapacity,
+      unloadeddate
+
     }
+    //console.log(newfueldetail);
+    axios.post("http://localhost:8000/fuelinventory/add", newfueldetail).then(() => {
+      alert("Fuel Detais added")
+    }).catch((err) => {
+      alert(err)
+    })
+  }
 
-    return(
-
-
-
-
-
-
-      <div>
+  return (
+    <div>
       <div className=" display-table mt-5 ">
         <div className="row display-table-row mt-5">
           <div className="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
@@ -50,15 +44,15 @@ export default function AddFuelInventory(){
             <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
             <div className="navi">
               <ul>
-                <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
-                <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
-                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
+                <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                <li><a href="/fueldetailsmanage"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
+                <li><a href="/admin/fuelOrderView/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
+                <li><a href="/manageinventory"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
+                <li><a href="/storagemanagement"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Storage Management</span></a></li>
+                <li><a href="/admin/allfuelpass"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
+                <li><a href="/payment"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Supplier Management</span></a></li>
                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Vehicle Management</span></a></li>
-
               </ul>
             </div>
           </div>
@@ -110,145 +104,119 @@ export default function AddFuelInventory(){
                   </div>
                 </div>
               </header>
-         
-           
             </div>
 
+            {/* our code */}<div >
+              <div class="p-5 mb-4 bg-dark rounded-3">
+                <div class="container-fluid py-5">
+                  <h1 class="display-5 text-white fw-bold"> Admin: ADD Fuel Inventory</h1>
+                  <p class="col-md-8 text-white fs-4">cypetco fuel station</p>
 
-{/* our code */}<div >
-<div class="p-5 mb-4 bg-dark rounded-3">
-      <div class="container-fluid py-5">
-        <h1 class="display-5 text-white fw-bold"> Admin: ADD Fuel Inventory</h1>
-        <p class="col-md-8 text-white fs-4">cypetco fuel station</p>
-        
-      </div>
-    </div>
-<br></br>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="http://localhost:3000/fueldetailsmanage" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
-            
-  
-</div>
-<br></br>  
-     <div >
-        <form className="row g-3 needs-validation" novalidate onSubmit={sendData}>
-          
-          <div className="col-md-4">
-            <label for="name" className="form-label">Fuel Type</label>
-            <select id="inputState" class="form-control" required
-             onChange={(e)=>{
-                setfueltype(e.target.value)
-
-            }}>
-            <option selected></option>
-            <option>Petrol</option>
-            <option>Diesel</option>
-            <option>Kerosene</option>
-            </select>
-          </div>
-          
-
-          <div className="col-md-4">
-            <label for="type_ID" className="form-label">Quality</label>
-            <select id="inputState" class="form-control" required
-            onChange={(e)=>{
-                setfuelquality(e.target.value)
-
-            }}>
-              <option selected></option>
-            <option>Octane 92</option>
-            <option>Octane 93</option>
-            <option>Octane 95</option>
-            <option>Auto Diesel</option>
-            <option>4 Star Euro 4</option>
-            <option>Lanka Kerosene</option>
-            <option>Lanka Industrial Kerosene</option>
-            </select>
-            
-            <div className="valid-feedback">
-              
-            </div>
-
-          </div>
-          <div className="col-md-4">
-            <label for="type_ID" className="form-label">Cypetco Item No</label>
-            <select id="inputState" class="form-control" required
-            onChange={(e)=>{
-                setcypetcoitemno(e.target.value)
-
-            }}>
-            <option selected></option>
-            <option>A0023L99 octane 92</option>
-            <option>A0018L99 Octane 93</option>
-            <option>A0013L95 Octane 95</option>
-            <option>A0045L77 auto</option>
-            <option>A0041222 supper</option>
-            <option>A0015256 lanka</option>\
-            <option>A0017423 industrial</option>
-
-        
-            </select>
-            <div className="valid-feedback">
-              
-            </div>
-
-          </div>
-          <div className="col-md-4">
-            <label for="UnloadedCapacity" className="form-label">Unloaded Capacity liters</label>
-            <input type="number" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
-             onChange={(e)=>{
-                setUnloadedCapacity(e.target.value)
-
-            }}/>
-           
-            <div className="valid-feedback">
-              
-            </div>
-
-          </div>
-          <div className="col-md-4">
-            <label for="unloadeddate" className="form-label">UnloadedCapacity Updated Date</label>
-              <input type="date" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
-              onChange={(e)=>{
-                setunloadeddate(e.target.value)
-            }}/>
-              <div id="validationServerUsernameFeedback" className="invalid-feedback">
-                
+                </div>
               </div>
-          </div>
-
-          
-         
-       
-          
-         <br/>
-          <div className="col-12">
-            <button className="btn btn-primary" type="submit">Submit form</button>
-          </div>
-        </form>
-    </div> 
-   </div>
-          
+              <br></br>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="http://localhost:3000/fueldetailsmanage" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
 
 
+              </div>
+              <br></br>
+              <div >
+                <form className="row g-3 needs-validation" novalidate onSubmit={sendData}>
+
+                  <div className="col-md-4">
+                    <label for="name" className="form-label">Fuel Type</label>
+                    <select id="inputState" class="form-control" required
+                      onChange={(e) => {
+                        setfueltype(e.target.value)
+
+                      }}>
+                      <option selected></option>
+                      <option>Petrol</option>
+                      <option>Diesel</option>
+                      <option>Kerosene</option>
+                    </select>
+                  </div>
+
+
+                  <div className="col-md-4">
+                    <label for="type_ID" className="form-label">Quality</label>
+                    <select id="inputState" class="form-control" required
+                      onChange={(e) => {
+                        setfuelquality(e.target.value)
+
+                      }}>
+                      <option selected></option>
+                      <option>Octane 92</option>
+                      <option>Octane 93</option>
+                      <option>Octane 95</option>
+                      <option>Auto Diesel</option>
+                      <option>4 Star Euro 4</option>
+                      <option>Lanka Kerosene</option>
+                      <option>Lanka Industrial Kerosene</option>
+                    </select>
+
+                    <div className="valid-feedback">
+
+                    </div>
+
+                  </div>
+                  <div className="col-md-4">
+                    <label for="type_ID" className="form-label">Cypetco Item No</label>
+                    <select id="inputState" class="form-control" required
+                      onChange={(e) => {
+                        setcypetcoitemno(e.target.value)
+
+                      }}>
+                      <option selected></option>
+                      <option>A0023L99 octane 92</option>
+                      <option>A0018L99 Octane 93</option>
+                      <option>A0013L95 Octane 95</option>
+                      <option>A0045L77 auto</option>
+                      <option>A0041222 supper</option>
+                      <option>A0015256 lanka</option>\
+                      <option>A0017423 industrial</option>
+
+
+                    </select>
+                    <div className="valid-feedback">
+
+                    </div>
+
+                  </div>
+                  <div className="col-md-4">
+                    <label for="UnloadedCapacity" className="form-label">Unloaded Capacity liters</label>
+                    <input type="number" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
+                      onChange={(e) => {
+                        setUnloadedCapacity(e.target.value)
+
+                      }} />
+
+                    <div className="valid-feedback">
+
+                    </div>
+
+                  </div>
+                  <div className="col-md-4">
+                    <label for="unloadeddate" className="form-label">UnloadedCapacity Updated Date</label>
+                    <input type="date" className="form-control " id="validationServer02" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required
+                      onChange={(e) => {
+                        setunloadeddate(e.target.value)
+                      }} />
+                    <div id="validationServerUsernameFeedback" className="invalid-feedback">
+
+                    </div>
+                  </div>
+                  <br />
+                  <div className="col-12">
+                    <button className="btn btn-primary" type="submit">Submit form</button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-       
       </div>
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-      
-    )
+  )
 }

@@ -43,15 +43,15 @@ function FuelStorageManagement() {
                         <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
                         <div className="navi">
                             <ul>
-                                <li ><a href="/addemployee"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
-                                <li><a href="/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
-                                <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
+                                <li ><a href="/test"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Employee Management</span></a></li>
+                                <li><a href="/fueldetailsmanage"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel Management</span></a></li>
+                                <li><a href="/admin/fuelOrderView/"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Order Management</span></a></li>
+                                <li><a href="/manageinventory"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Inventory Management</span></a></li>
+                                <li><a href="/storagemanagement"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Storage Management</span></a></li>
+                                <li><a href="/admin/allfuelpass"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Fuel queue Management</span></a></li>
+                                <li><a href="/payment"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Payment Management</span></a></li>
                                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Supplier Management</span></a></li>
                                 <li><a href="#"><className style={{ fontSize: 30, color: "#5584FF" }} /><span className="hidden-xs hidden-sm">&nbsp;&nbsp;Vehicle Management</span></a></li>
-
                             </ul>
                         </div>
                     </div>
@@ -138,7 +138,6 @@ function FuelStorageManagement() {
                                                     <th scope="col">Cypetco Item No</th>
                                                     <th scope="col">Tank Capacity</th>
                                                     <th scope="col">Available Capacity</th>
-                                                
                                                     <th scope="col">Options</th>
                                                 </tr>
                                             </thead>
@@ -152,8 +151,9 @@ function FuelStorageManagement() {
                                                                 <td style={{ width: "100px" }}>{val.cypetcoitemno}</td>
                                                                 <td style={{ width: "100px" }}>{val.tankcapacity}</td>
                                                                 <td style={{ width: "100px" }}>{val.availablecapacity}</td>
-                                                                
-                                                                <td style={{ width: "100px" }}><a href={`/updatefuelinventory/` + val._id} className='btn btn-warning'>Update</a>
+
+                                                                <td style={{ width: "100px" }}><a href={`/updatefuelstorage/` + val._id} className='btn btn-warning'>Update</a>
+                                                                    <a href={`/updatefuelcapacity/` + val._id} className='btn btn-warning'>Update Capacity</a>
                                                                     <Popup
                                                                         trigger={<button className="btn btn-danger"> Delete </button>}
                                                                         modal
@@ -199,7 +199,6 @@ function FuelStorageManagement() {
                                                                                     <p className="card-text">cypetco item no: {val.cypetcoitemno}</p>
                                                                                     <span className="card-text">Tank capacity: {val.tankcapacity}</span> <br />
                                                                                     <span className="card-text">Available Capacity: {val.availablecapacity}</span><br />
-                                                                                    
                                                                                     <div className>
                                                                                         <br></br>
                                                                                         <button
@@ -243,18 +242,6 @@ function FuelStorageManagement() {
 
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
     );
 }
 

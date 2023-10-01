@@ -10,8 +10,7 @@ function Header() {
         
         {/* Navigation */}
         <div className="fixed-top">
-      
-          <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear w-100 p-4">
+          <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear w-100 p-2">
             <div className="container">
               <a className="navbar-brand" rel="nofollow" target="_blank" href="#" style={{textTransform: 'uppercase'}}>CEYPETCO LANKA
               </a>
@@ -20,7 +19,7 @@ function Header() {
               </button>
               <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto">
-                  <li className="nav-item active" style={{marginLeft:"900px"}}>
+                  <li className="nav-item active" style={{marginLeft:"750px"}}>
                     <a className="nav-link" href="/">Home</a>
                   </li>
                   <li className="nav-item">
