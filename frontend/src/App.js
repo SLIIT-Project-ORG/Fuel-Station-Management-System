@@ -66,8 +66,6 @@ import SupplierRegistration from './components/SupplierRegistration';
 import SupplierUpdate from './components/SupplierUpdate';
 import FuelRequest from './components/FuelRequest';
 import FuelUpdate from './components/FuelUpdate';
- 
-
 import AdminFuelOrderView1 from './components/FuelOrders/AdminFuelOrderView1';
 import UserCreationFuelPass from './components/UserCreateFuelPass';
 
@@ -116,9 +114,6 @@ function App() {
           <Route path='/user/fuelOrderHome' element={<FuelOrderHome/>}/>
           <Route path='/admin/fuelOrderView' element={<AdminFuelOrderView1/>}/>
 
-
-
-
           <Route path='/admin' element={<Admin />}></Route>
           <Route path='/adddetails' element={<AddFuelDetails />}></Route>
           <Route path='/fueldetailsmanage' element={<FuelDetailsManagement />}></Route>
@@ -144,11 +139,6 @@ function App() {
           <Route path='/fuelrequest'   element={<FuelRequest/>} > </Route>
           <Route path='/fuelview'   element={<Admin3/>} > </Route>
           <Route path='/updaterequest/:id'   element={<FuelUpdate/>} > </Route>
-
-
-
-
-
 
           <Route path="/pass-register" element={<UserCreationFuelPass/>}></Route>
         </Routes>

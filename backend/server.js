@@ -6,8 +6,10 @@ require("dotenv/config");
 require("./config/dbconnection");
 
 const app = express();
-app.use(cors())
-app.use(express.json())
+
+app.use(cors(corsOptions));
+app.use(express.json());
+
 const PORT = process.env.PORT;
 
 const fueldetailRouter= require("./routes/FuelDetails");
