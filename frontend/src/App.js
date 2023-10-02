@@ -1,19 +1,24 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Test from './components/Test';
 import Login from './components/AdminLogin';
 import EmployeeView from './components/EmployeeView';
 import UserLogin from './components/UserProfileLogin';
 import UserProfileView from './components/UserProfileView';
 import UpdateEmployee from './components/UpdateEmployeeDetails';
 import Home from './components/HomePage';
+import Admin from './components/AdminSideBar';
 import EmployeeReportView from './components/EmployeeReportView';
+
 import UpdatePayment from './components/UpdatePaymentDetails';
+
+import Test from './components/Test';
 import Test1 from './components/Test1';
+
 import Test4 from './components/Test4';
 import Test5 from './components/Test5';
 import Test6 from './components/Test6';
+
 import FuelPassLogin from './components/FuelPassLogin';
 import FuelPassUserProfile from './components/FuelPassUserProfile';
 import AdminFuelPasses from './components/AdminFuelPasses';
@@ -24,9 +29,17 @@ import FuelPassProfile1 from './components/FuelPassProfile1';
 //import PaymentDetails from './components/PaymentDetails';
 //import AddPayment from './components/AddPayment';
 
+
+
+
 import { FuelOrderHome }  from './components/FuelOrders/FuelOrderHome';
 import AddPayment from './components/AddPayment';
 import PaymentDetails from './components/PaymentDetails';
+
+
+
+
+
 
 import AddFuelDetails from './components/AdminAddFuelDetails';
 import FuelDetailsManagement from './components/ManageFuelDetails';
@@ -35,7 +48,6 @@ import UpdateFuelDetails from './components/updateFuelDetails';
 import AddFuelInventory from './components/AdminAddInventoty';
 import FuelInventoryManagement from './components/ManageInventory';
 import AddFuelStorage from './components/AdminAddFuelStorage';
-import Admin from './components/AdminSideBar';
 //import Admin from './components/AdminSideBar';
 import UpdateInventory from './components/updateInventory';
 import FuelStorageCustomer from './components/StorageDetailsCustomerView';
@@ -65,7 +77,6 @@ function App() {
 
       <Router>
         <Routes>
-          {/* <Route path='/' element={<Header />}></Route> */}
           <Route path='/login' element={<Login />}></Route>
           <Route path='/employeedetails' element={<EmployeeView />}></Route>
           <Route path='/userprofile' element={<UserLogin />}></Route>
@@ -105,6 +116,9 @@ function App() {
           <Route path='/user/fuelOrderHome' element={<FuelOrderHome/>}/>
           <Route path='/admin/fuelOrderView' element={<AdminFuelOrderView1/>}/>
 
+
+
+
           <Route path='/admin' element={<Admin />}></Route>
           <Route path='/adddetails' element={<AddFuelDetails />}></Route>
           <Route path='/fueldetailsmanage' element={<FuelDetailsManagement />}></Route>
@@ -130,6 +144,12 @@ function App() {
           <Route path='/fuelrequest'   element={<FuelRequest/>} > </Route>
           <Route path='/fuelview'   element={<Admin3/>} > </Route>
           <Route path='/updaterequest/:id'   element={<FuelUpdate/>} > </Route>
+
+
+
+
+
+
           <Route path="/pass-register" element={<UserCreationFuelPass/>}></Route>
         </Routes>
       </Router>
