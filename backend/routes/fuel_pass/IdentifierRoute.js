@@ -232,4 +232,27 @@ router.route("/findprofile").post((req, res) => {
 
 })
 
+
+router.route("/findprofile/query_param").post((req, res) => {
+
+    Identifier.findOne({ mobile_number:req.params.mobile_number,nic:req.params.nic })
+        .then((data) => {
+            if(!data){
+                res.setHeader('Content-Security-Policy', "default-src 'self'");
+                res.status(400);
+                res.json("Profile Not Found");
+            }
+            else{
+                res.setHeader('Content-Security-Policy', "default-src 'self'");
+                res.status(200);
+                res.json(data);
+            }
+        })
+        .catch((err) => {
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
+            res.status(400);
+            res.json(err.message);
+        });
+})
+
 module.exports = router;
