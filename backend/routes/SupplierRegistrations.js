@@ -23,7 +23,7 @@ router.route("/sregister").post((req,res)=>{
             
     })
     newsupplierRegistration.save().then(()=>{
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
+
         res.json("Successfully Registered the Supplier")
     }).catch((err)=>{
         console.log(err);
@@ -31,8 +31,7 @@ router.route("/sregister").post((req,res)=>{
 })
 
 router.route("/").get((req,res)=>{
-  SupplierRegistration.find().then((SupplierRegistration)=>{
-    res.setHeader('Content-Security-Policy', "default-src 'self'");    
+  SupplierRegistration.find().then((SupplierRegistration)=>{    
     res.json(SupplierRegistration)
     }).catch((err)=>{
         console.log(err)
@@ -63,11 +62,10 @@ router.route("/update/:id").put(async(req,res)=>{
 
     const update = await SupplierRegistration.findByIdAndUpdate(supplierId,updateSupplier)
     .then(()=>{
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
         res.status(200).send({status:"Supplier Updates Successfully" })
     }).catch((err)=>{
         console.log(err);
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
+
         res.status(500).send({status:"Error with updating data",error:err.message});
      
     })
@@ -77,31 +75,24 @@ router.route("/update/:id").put(async(req,res)=>{
 
 router.route("/delete/:id").delete(async(req, res)=>{
     let supplierId=req.params.id;
-
     await SupplierRegistration.findByIdAndDelete(supplierId)
     .then(()=>{
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
         res.status(200).send({status:" Deleted Registered Supplier"});
     }).catch((err)=>{
         console.log(err.message);
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
         res.status(500).send({status:"Error with delete",error:err.message});
     })
 })
 
 
 router.route('/:id').get((req, res) => {
-
     let id = req.params.id;
-
     SupplierRegistration.findById(id)
         .then((data) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(data);
             //console.error(data);
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err);
         })
 

@@ -30,7 +30,7 @@ router.route("/insert").post((req, res) => {
                     const obj = {
                         msg: "Insert Employee Details Successfully",
                     }
-                    res.setHeader('Content-Security-Policy', "default-src 'self'");
+                    
                     res.json(obj);
 
                 }).catch((err) => {
@@ -38,7 +38,7 @@ router.route("/insert").post((req, res) => {
                     const obj = {
                         msg: "Employee insert failed",
                     }
-                    res.setHeader('Content-Security-Policy', "default-src 'self'");
+                    
                     res.json(obj);
 
                 });
@@ -48,7 +48,7 @@ router.route("/insert").post((req, res) => {
                 const obj = {
                     msg: "Mobile No,NIC or email already exists"
                 }
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+                
                 res.json(obj);
             }
         })
@@ -62,7 +62,7 @@ router.route("/insert").post((req, res) => {
 router.route("/").get((req, res) => {
 
     employeeprofile.find().then((employeeprofile) => {
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
+        
         res.json(employeeprofile);
     }).catch((err) => {
         console.log(err);
@@ -76,7 +76,7 @@ router.route("/delete/:id").delete((req, res) => {
     let Eprofile = req.params.id;
 
     employeeprofile.findByIdAndDelete(Eprofile).then(() => {
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
+        
         res.json("Delete Employee Details successfully");
     }).catch((err) => {
         console.log(err);
@@ -109,7 +109,7 @@ router.route("/update/:id").put((req, res) => {
     })
 
     employeeprofile.findByIdAndUpdate(uid, employeeprofileobj).then((udata) => {
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
+        
         res.json(udata);
     }).catch((err) => {
         console.log(err);
@@ -123,7 +123,7 @@ router.route("/:id").get((req, res) => {
     let id = req.params.id;
 
     employeeprofile.findById(id).then((data) => {
-        res.setHeader('Content-Security-Policy', "default-src 'self'");
+        
         res.json(data);
     }).catch((err) => {
         console.log(err);
@@ -143,11 +143,11 @@ router.route("/search").post((req, res) => {
         }
     )
         .then((data) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
+            
             res.json(data);
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
+            
             res.json(err.message);
         })
 

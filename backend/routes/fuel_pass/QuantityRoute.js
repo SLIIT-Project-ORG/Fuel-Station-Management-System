@@ -7,12 +7,10 @@ router.route("/").post(async (req, res) => {
 
     await Quantity.create(data)
         .then(() => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(201);
             res.json("Vehicle type and quantity inserted");
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })
@@ -22,12 +20,10 @@ router.route("/").get(async (req, res) => {
 
     Quantity.find()
         .then((data) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(200);
             res.json(data);
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })

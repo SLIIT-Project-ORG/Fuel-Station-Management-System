@@ -22,7 +22,6 @@ router.route("/add").post((req, res) => {
     description
   })
   newFuelDetails.save().then(() => {
-    res.setHeader('Content-Security-Policy', "default-src 'self'");
     res.json("FuelDetails Added")
   }).catch((err) => {
     console.log(err);
@@ -31,7 +30,6 @@ router.route("/add").post((req, res) => {
 
 router.route("/").get((req, res) => {
   FuelDetails.find().then((FuelDetailss) => {
-    res.setHeader('Content-Security-Policy', "default-src 'self'");
     res.json(FuelDetailss)
   }).catch((err) => {
     console.log(err)
@@ -45,7 +43,7 @@ router.route('/update/:id').put((req, res, next) => {
       return next(error);
       console.log(error)
     } else {
-      res.setHeader('Content-Security-Policy', "default-src 'self'");
+
       res.json(data)
       console.log('FuelDetails updated successfully !')
     }
@@ -70,7 +68,7 @@ router.route('/get/:id').get((req, res) => {
     if (error) {
       return next(error)
     } else {
-      res.setHeader('Content-Security-Policy', "default-src 'self'");
+
       res.json(data)
     }
   })

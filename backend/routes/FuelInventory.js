@@ -22,7 +22,6 @@ router.route("/add").post((req, res) => {
     UnloadedCapacity
   })
   newFuelInventory.save().then(() => {
-    res.setHeader('Content-Security-Policy', "default-src 'self'");
     res.json("FuelInventory Added")
   }).catch((err) => {
     console.log(err);
@@ -31,7 +30,6 @@ router.route("/add").post((req, res) => {
 
 router.route("/").get((req, res) => {
   FuelInventory.find().then((FuelInventorys) => {
-    res.setHeader('Content-Security-Policy', "default-src 'self'");
     res.json(FuelInventorys)
   }).catch((err) => {
     console.log(err)
@@ -42,10 +40,10 @@ router.route('/update/:id').put((req, res, next) => {
     $set: req.body
   }, (error, data) => {
     if (error) {
-      return next(error);
       console.log(error)
+      return next(error);
     } else {
-      res.setHeader('Content-Security-Policy', "default-src 'self'");
+
       res.json(data)
       console.log('FuelInventory updated successfully !')
     }
@@ -70,7 +68,7 @@ router.route('/get/:id').get((req, res) => {
     if (error) {
       return next(error)
     } else {
-      res.setHeader('Content-Security-Policy', "default-src 'self'");
+
       res.json(data)
     }
   })

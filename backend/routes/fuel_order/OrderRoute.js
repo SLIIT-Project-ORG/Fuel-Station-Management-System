@@ -46,39 +46,39 @@ router.route("/").post(async (req, res) => {
 
                             } else {
                                 response.msg = "Registration Number is null or empty!!";
-                                res.setHeader('Content-Security-Policy', "default-src 'self'");
+                
                                 res.status(200);
                                 res.json(response);
                             }
                         } else {
                             response.msg = "Institute Name is null or empty!!";
-                            res.setHeader('Content-Security-Policy', "default-src 'self'");
+            
                             res.status(200);
                             res.json(response);
                         }
                     } else {
                         response.msg = "Mobile Number is null or empty!!";
-                        res.setHeader('Content-Security-Policy', "default-src 'self'");
+        
                         res.status(200);
                         res.json(response);
                     }
                 } else {
                     response.msg = "Email is null or empty";
-                    res.setHeader('Content-Security-Policy', "default-src 'self'");
+    
                     res.status(200);
                     res.json(response);
                 }
 
             } else {
                 response.msg = "Data already in the system";
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(200);
                 res.json(response);
             }
         })
             .catch((err) => {
                 response.msg = err.message;
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(400);
                 res.json(response);
             })
@@ -104,12 +104,12 @@ router.route("/").get((req, res) => {
             .then((data) => {
                 response.msg = "success";
                 response.data = data;
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(200);
                 res.json(response);
             }).catch((err) => {
                 response.msg = err.message;
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(400);
                 res.json(response);
             })
@@ -135,13 +135,13 @@ router.route("/:id").get((req, res) => {
             .then((data) => {
                 response.msg = "success";
                 response.data = data;
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(200);
                 res.json(response);
             })
             .catch((err) => {
                 response.msg = err.message;
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(400);
                 res.json(response);
             })
@@ -170,13 +170,13 @@ router.route("/:id").put((req, res) => {
             .then((data) => {
                 response.data = order;
                 response.msg = "success";
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(200);
                 res.json(response);
             })
             .catch((err) => {
                 response.msg = err.message;
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
+
                 res.status(400);
                 res.json(response);
             })
@@ -202,12 +202,10 @@ router.route("/:id").delete((req, res) => {
         .then((data) => {
             response.msg = "success";
             response.data = data._id;
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(200);
             res.json(response);
         }).catch((err) => {
             response.msg = err.message;
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(response);
         })
@@ -228,12 +226,10 @@ router.route("/:id/:status").put((req, res) => {
 
     Order.findByIdAndUpdate(id, data)
         .then((d) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(200);
             res.json(data);
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })
@@ -248,12 +244,10 @@ router.route("/status/:status").get((req, res) => {
         isApprove: status
     })
         .then((data) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(200);
             res.json(data);
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err);
         })

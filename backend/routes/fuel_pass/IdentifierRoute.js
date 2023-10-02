@@ -76,7 +76,6 @@ router.route("/").post(async (req, res) => {
     )
         .then(async (data) => {
             if (data) {
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.status(400);
                 res.json("You have registered within this week");
             }
@@ -88,21 +87,16 @@ router.route("/").post(async (req, res) => {
                             "message": "Fuel pass Created Successfully",
                             "data": data
                         }
-
-                        res.setHeader('Content-Security-Policy', "default-src 'self'");
                         res.status(201);
                         res.json(obj);
-
                     })
                     .catch((err) => {
-                        res.setHeader('Content-Security-Policy', "default-src 'self'");
                         res.status(400);
                         res.json(err);
                     })
             }
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(404);
             res.json(err);
         })
@@ -113,12 +107,10 @@ router.route("/").get((req, res) => {
 
     Identifier.find()
         .then((data) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(200);
             res.json(data);
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })
@@ -141,7 +133,6 @@ router.route("/:id").get(async (req, res) => {
                     console.log(err.message);
                 })
 
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json({
                 "data": data,
                 "quantity": quantity
@@ -160,12 +151,10 @@ router.route("/:id").put((req, res) => {
 
     Identifier.findByIdAndUpdate(id, body)
         .then(() => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(201);
             res.json("Your profile was updated");
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })
@@ -178,12 +167,10 @@ router.route("/:id").delete((req, res) => {
 
     Identifier.findByIdAndDelete(id)
         .then(() => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(200);
             res.json("Profile Deleted");
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })
@@ -196,12 +183,10 @@ router.route("/find").post((req, res) => {
 
     Identifier.findOne({ reference_no: req.body.reference_no })
         .then((data) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(200);
             res.json(data);
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })
@@ -214,18 +199,15 @@ router.route("/findprofile").post((req, res) => {
         .then((data) => {
 
             if(!data){
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.status(400);
                 res.json("Profile Not Found");
             }
             else{
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.status(200);
                 res.json(data);
             }
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         })
@@ -238,18 +220,15 @@ router.route("/findprofile/query_param").post((req, res) => {
     Identifier.findOne({ mobile_number:req.params.mobile_number,nic:req.params.nic })
         .then((data) => {
             if(!data){
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.status(400);
                 res.json("Profile Not Found");
             }
             else{
-                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.status(200);
                 res.json(data);
             }
         })
         .catch((err) => {
-            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.status(400);
             res.json(err.message);
         });
