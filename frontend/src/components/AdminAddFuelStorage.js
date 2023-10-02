@@ -33,12 +33,6 @@ export default function AddFuelStorage() {
   }
 
   return (
-
-
-
-
-
-
     <div>
       <div className=" display-table mt-5 ">
         <div className="row display-table-row mt-5">
@@ -110,8 +104,6 @@ export default function AddFuelStorage() {
                   </div>
                 </div>
               </header>
-
-
             </div>
 
 
@@ -229,25 +221,11 @@ export default function AddFuelStorage() {
               </div>
             </div>
 
-
-
           </div>
+
         </div>
-
       </div>
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
 
 
   )

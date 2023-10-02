@@ -10,7 +10,6 @@ function Header() {
         
         {/* Navigation */}
         <div className="fixed-top">
-      
           <nav className="navbar navbar-expand-lg navbar-dark mx-background-top-linear w-100 p-2">
             <div className="container">
               <a className="navbar-brand" rel="nofollow" target="_blank" href="#" style={{textTransform: 'uppercase'}}>CEYPETCO LANKA

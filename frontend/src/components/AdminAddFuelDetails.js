@@ -1,9 +1,8 @@
-import React, { useState } from "react"
+import React,{useState} from "react"
 import axios from "axios";
 import "../styles/Admin.css";
 
 export default function AddFuelDetails() {
-
 
   const [fueltype, setfueltype] = useState("");
   const [fuelquality, setfuelquality] = useState("");
@@ -33,18 +32,11 @@ export default function AddFuelDetails() {
   }
 
   return (
-
-
-
-
-
-
     <div>
       <div className=" display-table mt-5 ">
         <div className="row display-table-row mt-5">
           <div className="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
             <div className="logo">
-
 
             </div>
             <h3 style={{ color: "white" }}><b>Admin Panel</b></h3>
@@ -111,9 +103,7 @@ export default function AddFuelDetails() {
                 </div>
               </header>
 
-
             </div>
-
 
             {/* our code */}<div >
               <div class="p-5 mb-4 bg-dark rounded-3">
@@ -240,27 +230,9 @@ export default function AddFuelDetails() {
                 </form>
               </div>
             </div>
-
-
-
           </div>
         </div>
-
       </div>
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
   )
 }

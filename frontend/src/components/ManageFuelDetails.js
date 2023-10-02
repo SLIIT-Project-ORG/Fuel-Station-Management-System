@@ -233,29 +233,10 @@ function FuelDetailsManagement() {
 
                         {/* our code */}
 
-
-
                     </div>
                 </div>
-
             </div>
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
     );
 }
 

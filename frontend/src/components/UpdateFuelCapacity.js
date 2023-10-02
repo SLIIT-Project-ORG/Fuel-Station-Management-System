@@ -23,8 +23,6 @@ class EditFuelCapacity extends Component {
     this.onChangetankcapacity = this.onChangetankcapacity.bind(this);
     this.onChangeavailablecapacity = this.onChangeavailablecapacity.bind(this);
 
-
-
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -33,7 +31,6 @@ class EditFuelCapacity extends Component {
       fuelquality: "",
       cypetcoitemno: "",
       availablecapacity: "",
-
       records: [],
     };
   }
@@ -49,7 +46,6 @@ class EditFuelCapacity extends Component {
           availablecapacity: response.data.availablecapacity,
           fuelquality: response.data.fuelquality,
           cypetcoitemno: response.data.cypetcoitemno,
-
         });
       })
       .catch(function (error) {
@@ -87,8 +83,6 @@ class EditFuelCapacity extends Component {
     });
   }
 
-
-
   onSubmit(e) {
     e.preventDefault();
     const newEditedProduct = {
@@ -97,10 +91,8 @@ class EditFuelCapacity extends Component {
       availablecapacity: this.state.availablecapacity,
       fuelquality: this.state.fuelquality,
       cypetcoitemno: this.state.cypetcoitemno,
-
     };
     console.log(newEditedProduct);
-
 
     axios
       .put(
@@ -114,7 +106,6 @@ class EditFuelCapacity extends Component {
   }
   render() {
     return (
-
 
 
 
@@ -205,8 +196,6 @@ class EditFuelCapacity extends Component {
                 </header>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                   <a href="/storagemanagement" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> Go Back</a>
-
-
                 </div>
                 <div className="container">
 
@@ -277,16 +266,12 @@ class EditFuelCapacity extends Component {
                                 />
                               </div>
                             </div>
-
-
                             <br />
-
                             <div className="form-group row">
                               <input
                                 type="submit"
                                 value="Update Record"
                                 className="btn btn-primary"
-
                               />
                             </div>
                           </div>
@@ -307,25 +292,8 @@ class EditFuelCapacity extends Component {
           </div>
 
         </div>
-
-
-
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
     );
   }
-
-
 }
 export default withRouter(EditFuelCapacity);

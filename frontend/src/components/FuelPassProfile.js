@@ -15,7 +15,7 @@ export default function FuelPassProfile() {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:8000/identifier/${id}`)
+        axios.get(`http://localhost:8000`)
             .then((res) => {
                 setFuelPass(res.data.data);
                 console.log(res.data);
