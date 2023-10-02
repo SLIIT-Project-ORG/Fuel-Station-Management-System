@@ -215,7 +215,7 @@ router.route("/findprofile").post((req, res) => {
 })
 
 
-router.route("/findprofile/query_param").post((req, res) => {
+router.route("/findprofile/query_param").get((req, res) => {
 
     Identifier.findOne({ mobile_number:req.params.mobile_number,nic:req.params.nic })
         .then((data) => {
