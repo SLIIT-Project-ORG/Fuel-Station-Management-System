@@ -15,8 +15,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(helmet({
-    contentSecurityPolicy:false,
-    dnsPrefetchControl:false,
+    contentSecurityPolicy:true,
+    dnsPrefetchControl:true,
     noCache:true,
     nosniff:true,
     public:true,
@@ -28,6 +28,15 @@ app.use(helmet({
         preload:true
     }
 }));
+
+app.use(
+    helmet.contentSecurityPolicy({
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", 'http://localhost:3000'],
+          },
+    })
+)
 
 const PORT = process.env.PORT;
 
