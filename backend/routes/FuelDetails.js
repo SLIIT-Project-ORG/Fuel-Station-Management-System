@@ -22,6 +22,7 @@ router.route("/add").post((req, res) => {
     description
   })
   newFuelDetails.save().then(() => {
+    res.setHeader('Content-Security-Policy', "default-src 'self'");
     res.json("FuelDetails Added")
   }).catch((err) => {
     console.log(err);
@@ -30,6 +31,7 @@ router.route("/add").post((req, res) => {
 
 router.route("/").get((req, res) => {
   FuelDetails.find().then((FuelDetailss) => {
+    res.setHeader('Content-Security-Policy', "default-src 'self'");
     res.json(FuelDetailss)
   }).catch((err) => {
     console.log(err)
@@ -44,6 +46,7 @@ router.route('/update/:id').put((req, res, next) => {
       console.log(error)
     } else {
 
+      res.setHeader('Content-Security-Policy', "default-src 'self'");
       res.json(data)
       console.log('FuelDetails updated successfully !')
     }
@@ -55,9 +58,11 @@ router.route("/delete/:id").delete(async (req, res) => {
 
   await FuelDetails.findByIdAndDelete(accId)
     .then(() => {
+      res.setHeader('Content-Security-Policy', "default-src 'self'");
       res.status(200).send({ status: " FuelDetails deleted" });
     }).catch((err) => {
       console.log(err.message);
+      res.setHeader('Content-Security-Policy', "default-src 'self'");
       res.status(500).send({ status: "Error with delete", error: err.message });
     })
 })
@@ -69,6 +74,7 @@ router.route('/get/:id').get((req, res) => {
       return next(error)
     } else {
 
+      res.setHeader('Content-Security-Policy', "default-src 'self'");
       res.json(data)
     }
   })

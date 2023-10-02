@@ -24,6 +24,7 @@ router.route("/sregister").post((req,res)=>{
     })
     newsupplierRegistration.save().then(()=>{
 
+        res.setHeader('Content-Security-Policy', "default-src 'self'");
         res.json("Successfully Registered the Supplier")
     }).catch((err)=>{
         console.log(err);
@@ -32,6 +33,7 @@ router.route("/sregister").post((req,res)=>{
 
 router.route("/").get((req,res)=>{
   SupplierRegistration.find().then((SupplierRegistration)=>{    
+    res.setHeader('Content-Security-Policy', "default-src 'self'");
     res.json(SupplierRegistration)
     }).catch((err)=>{
         console.log(err)
@@ -89,10 +91,12 @@ router.route('/:id').get((req, res) => {
     let id = req.params.id;
     SupplierRegistration.findById(id)
         .then((data) => {
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(data);
             //console.error(data);
         })
         .catch((err) => {
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err);
         })
 

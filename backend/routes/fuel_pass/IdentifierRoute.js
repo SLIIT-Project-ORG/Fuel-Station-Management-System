@@ -77,6 +77,7 @@ router.route("/").post(async (req, res) => {
         .then(async (data) => {
             if (data) {
                 res.status(400);
+                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.json("You have registered within this week");
             }
             else {
@@ -88,16 +89,19 @@ router.route("/").post(async (req, res) => {
                             "data": data
                         }
                         res.status(201);
+                        res.setHeader('Content-Security-Policy', "default-src 'self'");
                         res.json(obj);
                     })
                     .catch((err) => {
                         res.status(400);
+                        res.setHeader('Content-Security-Policy', "default-src 'self'");
                         res.json(err);
                     })
             }
         })
         .catch((err) => {
             res.status(404);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err);
         })
 
@@ -108,10 +112,12 @@ router.route("/").get((req, res) => {
     Identifier.find()
         .then((data) => {
             res.status(200);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(data);
         })
         .catch((err) => {
             res.status(400);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err.message);
         })
 
@@ -133,7 +139,8 @@ router.route("/:id").get(async (req, res) => {
                     console.log(err.message);
                 })
 
-            res.json({
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
+                res.json({
                 "data": data,
                 "quantity": quantity
             });
@@ -152,10 +159,12 @@ router.route("/:id").put((req, res) => {
     Identifier.findByIdAndUpdate(id, body)
         .then(() => {
             res.status(201);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json("Your profile was updated");
         })
         .catch((err) => {
             res.status(400);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err.message);
         })
 
@@ -168,10 +177,12 @@ router.route("/:id").delete((req, res) => {
     Identifier.findByIdAndDelete(id)
         .then(() => {
             res.status(200);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json("Profile Deleted");
         })
         .catch((err) => {
             res.status(400);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err.message);
         })
 
@@ -184,10 +195,12 @@ router.route("/find").post((req, res) => {
     Identifier.findOne({ reference_no: req.body.reference_no })
         .then((data) => {
             res.status(200);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(data);
         })
         .catch((err) => {
             res.status(400);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err.message);
         })
 
@@ -200,15 +213,18 @@ router.route("/findprofile").post((req, res) => {
 
             if(!data){
                 res.status(400);
+                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.json("Profile Not Found");
             }
             else{
                 res.status(200);
+                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.json(data);
             }
         })
         .catch((err) => {
             res.status(400);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err.message);
         })
 
@@ -221,6 +237,7 @@ router.route("/findprofile/query_param").get((req, res) => {
         .then((data) => {
             if(!data){
                 res.status(400);
+                res.setHeader('Content-Security-Policy', "default-src 'self'");
                 res.json("Profile Not Found");
             }
             else{
@@ -230,6 +247,7 @@ router.route("/findprofile/query_param").get((req, res) => {
         })
         .catch((err) => {
             res.status(400);
+            res.setHeader('Content-Security-Policy', "default-src 'self'");
             res.json(err.message);
         });
 })
