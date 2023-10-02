@@ -7,20 +7,20 @@ require("./config/dbconnection");
 
 const app = express();
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT;
 
-const fueldetailRouter= require("./routes/FuelDetails");
-const fuelInventorydetailRouter= require("./routes/FuelInventory");
-const fuelstoragedetailRouter= require("./routes/FuelStorage");
-let employeeprofile = require("./routes/Employee__Profiles_Page.js");
-let ppayment = require("./routes/Payments");
-let alogin = require("./routes/AdminRoute");
-const identifier = require("./routes/fuel_pass/IdentifierRoute.js");
-const quantity = require("./routes/fuel_pass/QuantityRoute.js");
-const order = require("./routes/fuel_order/OrderRoute.js");
+// const fueldetailRouter= require("./routes/FuelDetails");
+// const fuelInventorydetailRouter= require("./routes/FuelInventory");
+// const fuelstoragedetailRouter= require("./routes/FuelStorage");
+// let employeeprofile = require("./routes/Employee__Profiles_Page.js");
+// let ppayment = require("./routes/Payments");
+// let alogin = require("./routes/AdminRoute");
+// const identifier = require("./routes/fuel_pass/IdentifierRoute.js");
+// const quantity = require("./routes/fuel_pass/QuantityRoute.js");
+// const order = require("./routes/fuel_order/OrderRoute.js");
 const fueldetailRouter= require("./routes/FuelDetails");
 const fuelInventorydetailRouter= require("./routes/FuelInventory");
 const fuelstoragedetailRouter= require("./routes/FuelStorage");
