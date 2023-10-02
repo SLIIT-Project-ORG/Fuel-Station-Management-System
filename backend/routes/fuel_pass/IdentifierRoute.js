@@ -225,7 +225,7 @@ router.route("/findprofile/query_param").get((req, res) => {
             }
             else{
                 res.status(200);
-                res.json(data);
+                res.send("<div>" + data + "</div>");
             }
         })
         .catch((err) => {
