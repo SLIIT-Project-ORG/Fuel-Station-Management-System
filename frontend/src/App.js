@@ -38,7 +38,7 @@ import UpdateFuelStorage from './components/updateFuelStorage';
 import FuelStorageManagement from './components/ManageStorage';
 import VehicleRegistration from './components/VehicleRegistration';
 import VehicleUpdate from './components/VehicleUpdate'; 
-import VehicleUpdate from './components/VehicleUpdate';
+// import VehicleUpdate from './components/VehicleUpdate';
 import Admin1 from './components/AdminSideBar1';
 import Admin2 from './components/AdminSideBar2';
 import Admin3 from './components/AdminSideBar3';
